@@ -111,69 +111,48 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M34-Dw-ucr" userLabel="Sports Container View">
                                 <rect key="frame" x="0.0" y="119" width="600" height="44"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cx-Zp-LZV" userLabel="Sport Choices Scroll View">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="phq-yR-P5e">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5H-a1-MU7">
-                                                <rect key="frame" x="264" y="7" width="72" height="30"/>
-                                                <state key="normal" title="Basketball">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55P-3a-hHk">
-                                                <rect key="frame" x="271" y="7" width="58" height="30"/>
-                                                <state key="normal" title="Ultimate">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0B6-Iw-ApU">
-                                                <rect key="frame" x="270" y="7" width="61" height="30"/>
-                                                <state key="normal" title="Volleybal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpC-iw-syN">
-                                                <rect key="frame" x="278" y="7" width="44" height="30"/>
-                                                <state key="normal" title="Tennis">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywx-34-bry">
-                                                <rect key="frame" x="276" y="7" width="49" height="30"/>
-                                                <state key="normal" title="Soccer">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvI-yO-RZp">
-                                                <rect key="frame" x="274" y="7" width="53" height="30"/>
-                                                <state key="normal" title="Softball">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="0B6-Iw-ApU" secondAttribute="centerX" id="8eV-ZY-Obq"/>
-                                            <constraint firstAttribute="centerX" secondItem="yvI-yO-RZp" secondAttribute="centerX" id="EsU-H5-LHW"/>
-                                            <constraint firstAttribute="centerY" secondItem="Ywx-34-bry" secondAttribute="centerY" id="FJ7-Bv-ccN"/>
-                                            <constraint firstAttribute="centerY" secondItem="y5H-a1-MU7" secondAttribute="centerY" id="MtY-Gs-FtB"/>
-                                            <constraint firstAttribute="centerY" secondItem="rpC-iw-syN" secondAttribute="centerY" id="R1t-eb-6YN"/>
-                                            <constraint firstAttribute="centerY" secondItem="yvI-yO-RZp" secondAttribute="centerY" id="U9z-7n-yFj"/>
-                                            <constraint firstAttribute="centerX" secondItem="Ywx-34-bry" secondAttribute="centerX" id="WvW-9e-Pik"/>
-                                            <constraint firstAttribute="centerY" secondItem="55P-3a-hHk" secondAttribute="centerY" id="egN-dF-GgN"/>
-                                            <constraint firstAttribute="centerX" secondItem="55P-3a-hHk" secondAttribute="centerX" id="hfN-J7-L7j"/>
-                                            <constraint firstAttribute="centerY" secondItem="0B6-Iw-ApU" secondAttribute="centerY" id="ja1-0V-ihD"/>
-                                            <constraint firstAttribute="centerX" secondItem="rpC-iw-syN" secondAttribute="centerX" id="kaM-7T-DjL"/>
-                                            <constraint firstAttribute="centerX" secondItem="y5H-a1-MU7" secondAttribute="centerX" id="q6j-JX-QBF"/>
-                                        </constraints>
-                                    </scrollView>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pLO-6K-BZI">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="P8h-Ms-qM7">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsI-Tx-gWG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="42"/>
+                                                            <state key="normal" title="BB">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="jsI-Tx-gWG" firstAttribute="leading" secondItem="P8h-Ms-qM7" secondAttribute="leading" id="2NI-3T-UUh"/>
+                                                    <constraint firstItem="jsI-Tx-gWG" firstAttribute="top" secondItem="P8h-Ms-qM7" secondAttribute="top" id="431-7F-4dU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="jsI-Tx-gWG" secondAttribute="bottom" id="DvM-LS-cLK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jsI-Tx-gWG" secondAttribute="trailing" id="WZz-lh-PWm"/>
+                                                </constraints>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="9cx-Zp-LZV" firstAttribute="top" secondItem="M34-Dw-ucr" secondAttribute="top" id="Lmg-vv-FqA"/>
-                                    <constraint firstAttribute="bottom" secondItem="9cx-Zp-LZV" secondAttribute="bottom" id="MgL-Zq-7dw"/>
-                                    <constraint firstItem="9cx-Zp-LZV" firstAttribute="leading" secondItem="M34-Dw-ucr" secondAttribute="leading" id="ex5-3N-0Lb"/>
-                                    <constraint firstAttribute="trailing" secondItem="9cx-Zp-LZV" secondAttribute="trailing" id="oA4-Yf-5mC"/>
+                                    <constraint firstAttribute="bottom" secondItem="phq-yR-P5e" secondAttribute="bottom" id="6hj-xz-jp6"/>
+                                    <constraint firstAttribute="trailing" secondItem="phq-yR-P5e" secondAttribute="trailing" id="Ma5-oM-yh2"/>
                                     <constraint firstAttribute="height" constant="44" id="rVD-c5-9rp"/>
+                                    <constraint firstItem="phq-yR-P5e" firstAttribute="leading" secondItem="M34-Dw-ucr" secondAttribute="leading" id="t8C-HZ-GDX"/>
+                                    <constraint firstItem="phq-yR-P5e" firstAttribute="top" secondItem="M34-Dw-ucr" secondAttribute="top" id="uWP-hM-NaF"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ooV-kD-Vcl" userLabel="Results Table View">
@@ -229,7 +208,6 @@
                     <connections>
                         <outlet property="resultsTableView" destination="ooV-kD-Vcl" id="BsB-4o-sQJ"/>
                         <outlet property="searchBar" destination="HYs-dE-mDa" id="bkB-RU-Qvz"/>
-                        <outlet property="sportChoicesScrollView" destination="9cx-Zp-LZV" id="zbp-lT-6uf"/>
                         <outlet property="sportsContainerHeightConstraint" destination="rVD-c5-9rp" id="VN2-3c-aQh"/>
                         <outlet property="sportsContainerView" destination="M34-Dw-ucr" id="re8-rT-gWm"/>
                     </connections>
@@ -241,7 +219,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="629" y="428"/>
+            <point key="canvasLocation" x="641" y="428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iGR-3b-XZo">
