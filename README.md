@@ -17,5 +17,10 @@ This is the iOS client for [Pkkup](http://pkkup.com)
 
 ## Features
 
+## Team
+* Deepak
+
+
+
 * N/A
 
