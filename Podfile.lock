@@ -20,11 +20,31 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BDBOAuth1Manager (1.4.1):
+    - AFNetworking/NSURLConnection (~> 2.4.0)
+    - AFNetworking/NSURLSession (~> 2.4.0)
+  - FontAwesome-iOS (0.0.4)
+  - HexColors (2.2.1)
+  - MBProgressHUD (0.9)
+  - TSMessages (0.9.10):
+    - HexColors
+  - TTTAttributedLabel (1.10.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - BDBOAuth1Manager
+  - FontAwesome-iOS
+  - MBProgressHUD (~> 0.5)
+  - TSMessages
+  - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  BDBOAuth1Manager: 0625ba20bd7d36461bbf6dc3d29276b5932b7409
+  FontAwesome-iOS: 0c39b9f5d4687d36cf8958f61295c2b7960a7308
+  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  TSMessages: 8598a0645e9d54847f6e5f3b070bef39c493bbf8
+  TTTAttributedLabel: 94bb04f1e005616002dd2cee0262a0082e533627
 
 COCOAPODS: 0.34.1

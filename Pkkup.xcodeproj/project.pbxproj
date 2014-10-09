@@ -80,6 +80,7 @@
 		5648AB1819E6632700FF91BB /* HTKImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTKImageUtils.swift; sourceTree = "<group>"; };
 		5648AB1919E6632700FF91BB /* HTKNotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTKNotificationUtils.swift; sourceTree = "<group>"; };
 		5648AB1A19E6632700FF91BB /* HTKUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTKUtils.swift; sourceTree = "<group>"; };
+		5648AB2E19E6665F00FF91BB /* Pkkup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pkkup-Bridging-Header.h"; sourceTree = "<group>"; };
 		56C27E6319E0C73900AE1338 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewControllers/LoginViewController.swift; sourceTree = "<group>"; };
 		56C27E6519E0C83300AE1338 /* GameDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameDetailsViewController.swift; path = viewControllers/GameDetailsViewController.swift; sourceTree = "<group>"; };
 		56C27E6719E0C84300AE1338 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailsViewController.swift; path = viewControllers/LocationDetailsViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				56C4505E19DA820200551220 /* Info.plist */,
+				5648AB2E19E6665F00FF91BB /* Pkkup-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -653,9 +655,12 @@
 			baseConfigurationReference = D292250A2C498FC1D43061E4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Pkkup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pkkup/Pkkup-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -664,9 +669,11 @@
 			baseConfigurationReference = 87304160B2219FE1B805B571 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Pkkup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pkkup/Pkkup-Bridging-Header.h";
 			};
 			name = Release;
 		};
