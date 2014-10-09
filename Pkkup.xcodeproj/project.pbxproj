@@ -10,6 +10,25 @@
 		15B8B7DBA7446582DA31C7D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1292BD8BA896989F40FAA9 /* libPods.a */; };
 		5648AAF519E6400000FF91BB /* PkkupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAF419E6400000FF91BB /* PkkupViewController.swift */; };
 		5648AAF719E640E400FF91BB /* PkkupClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAF619E640E400FF91BB /* PkkupClient.swift */; };
+		5648AB1B19E6632700FF91BB /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAFD19E6632700FF91BB /* DataStructures.swift */; };
+		5648AB1C19E6632700FF91BB /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5648AAFF19E6632700FF91BB /* FontAwesome.otf */; };
+		5648AB1D19E6632700FF91BB /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0219E6632700FF91BB /* GitHubClient.swift */; };
+		5648AB1E19E6632700FF91BB /* GitHubOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0419E6632700FF91BB /* GitHubOrganization.swift */; };
+		5648AB1F19E6632700FF91BB /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0519E6632700FF91BB /* GitHubRepository.swift */; };
+		5648AB2019E6632700FF91BB /* GitHubRepositoryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0619E6632700FF91BB /* GitHubRepositoryContent.swift */; };
+		5648AB2119E6632700FF91BB /* GitHubResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0719E6632700FF91BB /* GitHubResource.swift */; };
+		5648AB2219E6632700FF91BB /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0819E6632700FF91BB /* GitHubUser.swift */; };
+		5648AB2319E6632700FF91BB /* RottenTomatoesMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0B19E6632700FF91BB /* RottenTomatoesMovie.swift */; };
+		5648AB2419E6632700FF91BB /* RottenTomatoesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0C19E6632700FF91BB /* RottenTomatoesClient.swift */; };
+		5648AB2519E6632700FF91BB /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB0F19E6632700FF91BB /* Tweet.swift */; };
+		5648AB2619E6632700FF91BB /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB1019E6632700FF91BB /* TwitterUser.swift */; };
+		5648AB2719E6632700FF91BB /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB1119E6632700FF91BB /* TwitterClient.swift */; };
+		5648AB2819E6632700FF91BB /* YelpBusinessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB1419E6632700FF91BB /* YelpBusinessResult.swift */; };
+		5648AB2919E6632700FF91BB /* YelpCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB1519E6632700FF91BB /* YelpCategory.swift */; };
+		5648AB2A19E6632700FF91BB /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB1619E6632700FF91BB /* YelpClient.swift */; };
+		5648AB2B19E6632700FF91BB /* HTKImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB1819E6632700FF91BB /* HTKImageUtils.swift */; };
+		5648AB2C19E6632700FF91BB /* HTKNotificationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB1919E6632700FF91BB /* HTKNotificationUtils.swift */; };
+		5648AB2D19E6632700FF91BB /* HTKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AB1A19E6632700FF91BB /* HTKUtils.swift */; };
 		56C27E6419E0C73900AE1338 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C27E6319E0C73900AE1338 /* LoginViewController.swift */; };
 		56C27E6619E0C83300AE1338 /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C27E6519E0C83300AE1338 /* GameDetailsViewController.swift */; };
 		56C27E6819E0C84300AE1338 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C27E6719E0C84300AE1338 /* LocationDetailsViewController.swift */; };
@@ -42,6 +61,25 @@
 /* Begin PBXFileReference section */
 		5648AAF419E6400000FF91BB /* PkkupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PkkupViewController.swift; path = viewControllers/PkkupViewController.swift; sourceTree = "<group>"; };
 		5648AAF619E640E400FF91BB /* PkkupClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PkkupClient.swift; path = models/PkkupClient.swift; sourceTree = "<group>"; };
+		5648AAFD19E6632700FF91BB /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		5648AAFF19E6632700FF91BB /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		5648AB0219E6632700FF91BB /* GitHubClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
+		5648AB0419E6632700FF91BB /* GitHubOrganization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubOrganization.swift; sourceTree = "<group>"; };
+		5648AB0519E6632700FF91BB /* GitHubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
+		5648AB0619E6632700FF91BB /* GitHubRepositoryContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryContent.swift; sourceTree = "<group>"; };
+		5648AB0719E6632700FF91BB /* GitHubResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubResource.swift; sourceTree = "<group>"; };
+		5648AB0819E6632700FF91BB /* GitHubUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
+		5648AB0B19E6632700FF91BB /* RottenTomatoesMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RottenTomatoesMovie.swift; sourceTree = "<group>"; };
+		5648AB0C19E6632700FF91BB /* RottenTomatoesClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RottenTomatoesClient.swift; sourceTree = "<group>"; };
+		5648AB0F19E6632700FF91BB /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		5648AB1019E6632700FF91BB /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
+		5648AB1119E6632700FF91BB /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		5648AB1419E6632700FF91BB /* YelpBusinessResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpBusinessResult.swift; sourceTree = "<group>"; };
+		5648AB1519E6632700FF91BB /* YelpCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpCategory.swift; sourceTree = "<group>"; };
+		5648AB1619E6632700FF91BB /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		5648AB1819E6632700FF91BB /* HTKImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTKImageUtils.swift; sourceTree = "<group>"; };
+		5648AB1919E6632700FF91BB /* HTKNotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTKNotificationUtils.swift; sourceTree = "<group>"; };
+		5648AB1A19E6632700FF91BB /* HTKUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTKUtils.swift; sourceTree = "<group>"; };
 		56C27E6319E0C73900AE1338 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewControllers/LoginViewController.swift; sourceTree = "<group>"; };
 		56C27E6519E0C83300AE1338 /* GameDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameDetailsViewController.swift; path = viewControllers/GameDetailsViewController.swift; sourceTree = "<group>"; };
 		56C27E6719E0C84300AE1338 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailsViewController.swift; path = viewControllers/LocationDetailsViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +133,129 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5648AAFB19E6632700FF91BB /* Hacktoolkit */ = {
+			isa = PBXGroup;
+			children = (
+				5648AAFC19E6632700FF91BB /* dataStructures */,
+				5648AAFE19E6632700FF91BB /* fonts */,
+				5648AB0019E6632700FF91BB /* lib */,
+				5648AB1719E6632700FF91BB /* utils */,
+			);
+			name = Hacktoolkit;
+			path = htk/Hacktoolkit;
+			sourceTree = "<group>";
+		};
+		5648AAFC19E6632700FF91BB /* dataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				5648AAFD19E6632700FF91BB /* DataStructures.swift */,
+			);
+			path = dataStructures;
+			sourceTree = "<group>";
+		};
+		5648AAFE19E6632700FF91BB /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5648AAFF19E6632700FF91BB /* FontAwesome.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		5648AB0019E6632700FF91BB /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB0119E6632700FF91BB /* GitHub */,
+				5648AB0919E6632700FF91BB /* RottenTomatoes */,
+				5648AB0D19E6632700FF91BB /* Twitter */,
+				5648AB1219E6632700FF91BB /* Yelp */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		5648AB0119E6632700FF91BB /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB0219E6632700FF91BB /* GitHubClient.swift */,
+				5648AB0319E6632700FF91BB /* models */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
+		5648AB0319E6632700FF91BB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB0419E6632700FF91BB /* GitHubOrganization.swift */,
+				5648AB0519E6632700FF91BB /* GitHubRepository.swift */,
+				5648AB0619E6632700FF91BB /* GitHubRepositoryContent.swift */,
+				5648AB0719E6632700FF91BB /* GitHubResource.swift */,
+				5648AB0819E6632700FF91BB /* GitHubUser.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5648AB0919E6632700FF91BB /* RottenTomatoes */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB0A19E6632700FF91BB /* models */,
+				5648AB0C19E6632700FF91BB /* RottenTomatoesClient.swift */,
+			);
+			path = RottenTomatoes;
+			sourceTree = "<group>";
+		};
+		5648AB0A19E6632700FF91BB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB0B19E6632700FF91BB /* RottenTomatoesMovie.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5648AB0D19E6632700FF91BB /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB0E19E6632700FF91BB /* models */,
+				5648AB1119E6632700FF91BB /* TwitterClient.swift */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
+		5648AB0E19E6632700FF91BB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB0F19E6632700FF91BB /* Tweet.swift */,
+				5648AB1019E6632700FF91BB /* TwitterUser.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5648AB1219E6632700FF91BB /* Yelp */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB1319E6632700FF91BB /* models */,
+				5648AB1619E6632700FF91BB /* YelpClient.swift */,
+			);
+			path = Yelp;
+			sourceTree = "<group>";
+		};
+		5648AB1319E6632700FF91BB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB1419E6632700FF91BB /* YelpBusinessResult.swift */,
+				5648AB1519E6632700FF91BB /* YelpCategory.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5648AB1719E6632700FF91BB /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				5648AB1819E6632700FF91BB /* HTKImageUtils.swift */,
+				5648AB1919E6632700FF91BB /* HTKNotificationUtils.swift */,
+				5648AB1A19E6632700FF91BB /* HTKUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		56C27E6119E0C6E500AE1338 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +294,7 @@
 		56C4505119DA820200551220 = {
 			isa = PBXGroup;
 			children = (
+				5648AAFB19E6632700FF91BB /* Hacktoolkit */,
 				56C4505C19DA820200551220 /* Pkkup */,
 				56C4507219DA820200551220 /* PkkupTests */,
 				56C4505B19DA820200551220 /* Products */,
@@ -283,6 +445,7 @@
 			files = (
 				56C4506519DA820200551220 /* Main.storyboard in Resources */,
 				56C4506A19DA820200551220 /* LaunchScreen.xib in Resources */,
+				5648AB1C19E6632700FF91BB /* FontAwesome.otf in Resources */,
 				56C4506719DA820200551220 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,18 +500,36 @@
 				56C390C519E3915200CC2E61 /* PkkupGroup.swift in Sources */,
 				56C27E6419E0C73900AE1338 /* LoginViewController.swift in Sources */,
 				56C390C319E3914800CC2E61 /* PkkupGame.swift in Sources */,
+				5648AB1E19E6632700FF91BB /* GitHubOrganization.swift in Sources */,
 				56C27E6619E0C83300AE1338 /* GameDetailsViewController.swift in Sources */,
+				5648AB1F19E6632700FF91BB /* GitHubRepository.swift in Sources */,
+				5648AB2619E6632700FF91BB /* TwitterUser.swift in Sources */,
+				5648AB2019E6632700FF91BB /* GitHubRepositoryContent.swift in Sources */,
+				5648AB2819E6632700FF91BB /* YelpBusinessResult.swift in Sources */,
 				5648AAF519E6400000FF91BB /* PkkupViewController.swift in Sources */,
+				5648AB2D19E6632700FF91BB /* HTKUtils.swift in Sources */,
+				5648AB2A19E6632700FF91BB /* YelpClient.swift in Sources */,
 				56C27E6E19E0D7E400AE1338 /* ResultTableViewCell.swift in Sources */,
 				56C27E6A19E0C85600AE1338 /* PlayerDetailsViewController.swift in Sources */,
 				56C390C119E3913C00CC2E61 /* PkkupLocation.swift in Sources */,
+				5648AB2519E6632700FF91BB /* Tweet.swift in Sources */,
 				56C390BF19E3912900CC2E61 /* PkkupPlayer.swift in Sources */,
 				56C4506019DA820200551220 /* AppDelegate.swift in Sources */,
 				56C27E6819E0C84300AE1338 /* LocationDetailsViewController.swift in Sources */,
 				56C390C919E3981500CC2E61 /* SettingsViewController.swift in Sources */,
 				5648AAF719E640E400FF91BB /* PkkupClient.swift in Sources */,
+				5648AB2C19E6632700FF91BB /* HTKNotificationUtils.swift in Sources */,
+				5648AB2919E6632700FF91BB /* YelpCategory.swift in Sources */,
+				5648AB2B19E6632700FF91BB /* HTKImageUtils.swift in Sources */,
+				5648AB1B19E6632700FF91BB /* DataStructures.swift in Sources */,
+				5648AB2719E6632700FF91BB /* TwitterClient.swift in Sources */,
+				5648AB1D19E6632700FF91BB /* GitHubClient.swift in Sources */,
 				56C390C719E391C600CC2E61 /* PkkupSport.swift in Sources */,
 				56C27E6C19E0C87800AE1338 /* HomeViewController.swift in Sources */,
+				5648AB2419E6632700FF91BB /* RottenTomatoesClient.swift in Sources */,
+				5648AB2119E6632700FF91BB /* GitHubResource.swift in Sources */,
+				5648AB2219E6632700FF91BB /* GitHubUser.swift in Sources */,
+				5648AB2319E6632700FF91BB /* RottenTomatoesMovie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
