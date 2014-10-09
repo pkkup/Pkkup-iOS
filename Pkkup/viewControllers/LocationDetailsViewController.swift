@@ -7,8 +7,17 @@
 
 import UIKit
 
-class LocationDetailsViewController: UIViewController {
+class LocationDetailsViewController: PkkupViewController {
 
+    // TODO: wire outlets from views here
+
+    var location: PkkupLocation! {
+        willSet(newLocation) {
+        }
+
+        didSet(oldLocation) {
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

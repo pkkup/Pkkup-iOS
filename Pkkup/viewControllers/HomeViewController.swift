@@ -8,14 +8,13 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var sportsContainerView: UIView!
-    @IBOutlet weak var sportsContainerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var sportChoicesScrollView: UIScrollView!
+    @IBOutlet weak private var searchBar: UISearchBar!
+    @IBOutlet weak private var sportsContainerView: UIView!
+    @IBOutlet weak private var sportsContainerHeightConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var resultsTableView: UITableView!
+    @IBOutlet weak private var resultsTableView: UITableView!
 
     let SPORT_CHOICES_DEFAULT_HEIGHT = CGFloat(44)
 
@@ -24,7 +23,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewData
 
         // Do any additional setup after loading the view.
         hideSportChoices()
-        sportChoicesScrollView.contentSize = CGSize(width: CGFloat(1800), height: CGFloat(44))
     }
 
     override func didReceiveMemoryWarning() {

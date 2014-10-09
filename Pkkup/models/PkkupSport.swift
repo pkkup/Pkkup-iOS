@@ -1,5 +1,5 @@
 //
-//  Sport.swift
+//  PkkupSport.swift
 //  Pkkup
 //
 //  Copyright (c) 2014 Pkkup. All rights reserved.
@@ -7,20 +7,20 @@
 
 import Foundation
 
-class Sport {
+class PkkupSport {
     var name: String?
     // Maybe?
     var iconImageUrl: String?
 
-    func getPlayers() -> [Player] {
+    func getPlayers() -> [PkkupPlayer] {
         return []
     }
 
-    func getLocations() -> [Location] {
+    func getLocations() -> [PkkupLocation] {
         return []
     }
 
-    func getGames() -> [Game] {
+    func getGames() -> [PkkupGame] {
         return []
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Group.swift
+//  PkkupGroup.swift
 //  Pkkup
 //
 //  Copyright (c) 2014 Pkkup. All rights reserved.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-class Group {
+class PkkupGroup {
     // Skip for now...
 }

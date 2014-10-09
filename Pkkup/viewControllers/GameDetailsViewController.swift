@@ -7,8 +7,17 @@
 
 import UIKit
 
-class GameDetailsViewController: UIViewController {
+class GameDetailsViewController: PkkupViewController {
 
+    // TODO: wire outlets from views here
+
+    var game: PkkupGame! {
+        willSet(newGame) {
+        }
+
+        didSet(oldGame) {
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

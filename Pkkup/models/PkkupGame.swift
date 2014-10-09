@@ -1,5 +1,5 @@
 //
-//  Game.swift
+//  PkkupGame.swift
 //  Pkkup
 //
 //  Copyright (c) 2014 Pkkup. All rights reserved.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Game {
-    var sport: Sport?
+class PkkupGame {
+    var sport: PkkupSport?
     var time: NSDate?
     var duration: NSTimeInterval?
-    var location: Location?
-    var playersConfirmed: [Player]?
-    var playersMaybe: [Player]?
+    var location: PkkupLocation?
+    var playersConfirmed: [PkkupPlayer]?
+    var playersMaybe: [PkkupPlayer]?
     var notes: String?
 
     // Probably not...

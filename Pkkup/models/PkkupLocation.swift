@@ -1,5 +1,5 @@
 //
-//  Location.swift
+//  PkkupLocation.swift
 //  Pkkup
 //
 //  Copyright (c) 2014 Pkkup. All rights reserved.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Location {
+class PkkupLocation {
     // Location attributes
     var name: String?
     var streetAddress: String?
@@ -17,15 +17,15 @@ class Location {
     var long: Double?
 
     // Relations
-    var games: [Game]?
-    var players: [Player]?
+    var games: [PkkupGame]?
+    var players: [PkkupPlayer]?
 
     func getWeather() {
         // get from Forecast.io
         // temp, status (sunny, cloudy, etc)
     }
 
-    func getGames() -> [Game]? {
+    func getGames() -> [PkkupGame]? {
         // get and store locally
         return self.games
     }

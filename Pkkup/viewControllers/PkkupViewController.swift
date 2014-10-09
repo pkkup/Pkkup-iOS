@@ -1,25 +1,15 @@
 //
-//  PlayerDetailsViewController.swift
+//  PkkupViewController.swift
 //  Pkkup
 //
-//  Created by Jonathan Tsai on 10/4/14.
 //  Copyright (c) 2014 Pkkup. All rights reserved.
 //
 
 import UIKit
 
-class PlayerDetailsViewController: PkkupViewController {
+// Super-class view controller for all/most of our views
+class PkkupViewController: UIViewController {
 
-    // TODO: wire outlets from views here
-
-
-    var player: PkkupPlayer! {
-        willSet(newPlayer) {
-        }
-
-        didSet(oldPlayer) {
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
