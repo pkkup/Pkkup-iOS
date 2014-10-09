@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  Pkkup
 //
-//  Created by Jonathan Tsai on 9/29/14.
 //  Copyright (c) 2014 Pkkup. All rights reserved.
 //
 
