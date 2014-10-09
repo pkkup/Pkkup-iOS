@@ -20,7 +20,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="-316"/>
+            <point key="canvasLocation" x="-371" y="-886"/>
         </scene>
         <!--Game Details View Controller-->
         <scene sceneID="e3C-gv-j8O">
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFQ-Jp-zRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="-292"/>
+            <point key="canvasLocation" x="369" y="-886"/>
         </scene>
         <!--Player Details View Controller-->
         <scene sceneID="DgJ-bz-P35">
@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dr-lo-nh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105" y="-130"/>
+            <point key="canvasLocation" x="1093" y="-886"/>
         </scene>
         <!--Location Details View Controller-->
         <scene sceneID="CJA-Zy-Lhe">
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgv-Mb-RHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1459" y="584"/>
+            <point key="canvasLocation" x="1093" y="-164"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Tnt-Wz-LPg">
@@ -127,8 +127,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsI-Tx-gWG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="42"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsI-Tx-gWG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <state key="normal" title="BB">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
@@ -219,7 +219,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="641" y="428"/>
+            <point key="canvasLocation" x="369" y="-158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iGR-3b-XZo">
@@ -237,7 +237,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EL7-zT-COa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="428"/>
+            <point key="canvasLocation" x="-371" y="-158"/>
         </scene>
     </scenes>
 </document>

@@ -1,5 +1,5 @@
 //
-//  Player.swift
+//  PkkupPlayer.swift
 //  Pkkup
 //
 //  Copyright (c) 2014 Pkkup. All rights reserved.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Player {
+class PkkupPlayer {
     // Player Attributes
     var firstName: String?
     var lastName: String?
@@ -18,15 +18,15 @@ class Player {
     var bio: String?
 
     // Relations
-    var sports: [Sport]?
-    var followers: [Player]?
-    var following: [Player]?
-    var gamesConfirmed: [Game]?
-    var gamesMaybe: [Game]?
-    var locations: [Location]?
+    var sports: [PkkupSport]?
+    var followers: [PkkupPlayer]?
+    var following: [PkkupPlayer]?
+    var gamesConfirmed: [PkkupGame]?
+    var gamesMaybe: [PkkupGame]?
+    var locations: [PkkupLocation]?
 
-    // Maybe
-    var groups: [Group]?
+    // Maybe implement if we have time...
+    var groups: [PkkupGroup]?
     
     func getGravatarImageUrl() {
         
