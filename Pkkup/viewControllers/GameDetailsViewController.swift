@@ -56,6 +56,9 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
         return "Players Going:"
     }
     
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        println("row selected..")
+    }
 
     
     // MARK: - Navigation
@@ -64,11 +67,10 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         println("prepareForSegue to PlayerDetails")
         if (segue.identifier == "playerDetailSegue") {
-            let playerDetailVC = segue.destinationViewController as PlayerDetailsViewController
-            let indexPath = self.playersListTable.indexPathForSelectedRow()?.row
+            var playerDetailVC = segue.destinationViewController as PlayerDetailsViewController
+            /*let indexPath = self.playersListTable.indexPathForSelectedRow()?.row
             pkkupPlayer.firstName = playerArray[indexPath!]
-            playerDetailVC.player = pkkupPlayer
-            
+            playerDetailVC.player = pkkupPlayer*/
         }
     }
 
