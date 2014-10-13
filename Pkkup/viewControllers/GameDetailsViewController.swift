@@ -18,6 +18,9 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
     
     var playerArray = ["Deepak", "Jonathan", "Chandra", "Tim", "Shen",
                        "John", "Jim", "Russel", "Matt", "Brandon"]
+    
+    var pkkupPlayer: PkkupPlayer!;
+    
     // TODO: wire outlets from views here
     var game: PkkupGame! {
         didSet(game) {
@@ -54,14 +57,20 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        println("prepareForSegue to PlayerDetails")
+        if (segue.identifier == "playerDetailSegue") {
+            let playerDetailVC = segue.destinationViewController as PlayerDetailsViewController
+            let indexPath = self.playersListTable.indexPathForSelectedRow()?.row
+            pkkupPlayer.firstName = playerArray[indexPath!]
+            playerDetailVC.player = pkkupPlayer
+            
+        }
     }
-    */
+
 
 }
