@@ -10,6 +10,8 @@
 		002A881019E934C6006842B8 /* PlayersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002A880F19E934C6006842B8 /* PlayersListTableViewCell.swift */; };
 		00E7C9BE19E783360045C303 /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */; };
 		15B8B7DBA7446582DA31C7D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1292BD8BA896989F40FAA9 /* libPods.a */; };
+		304CF9A919EC6C9F00E55A8E /* GamesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CF9A819EC6C9F00E55A8E /* GamesCell.swift */; };
+		304CF9AB19EC77EB00E55A8E /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */; };
 		5648AAF519E6400000FF91BB /* PkkupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAF419E6400000FF91BB /* PkkupViewController.swift */; };
 		5648AAF719E640E400FF91BB /* PkkupClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAF619E640E400FF91BB /* PkkupClient.swift */; };
 		5648AB1B19E6632700FF91BB /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAFD19E6632700FF91BB /* DataStructures.swift */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		002A880F19E934C6006842B8 /* PlayersListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersListTableViewCell.swift; path = views/PlayersListTableViewCell.swift; sourceTree = "<group>"; };
 		00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportsCollectionViewCell.swift; path = views/SportsCollectionViewCell.swift; sourceTree = "<group>"; };
+		304CF9A819EC6C9F00E55A8E /* GamesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCell.swift; sourceTree = "<group>"; };
+		304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
 		5648AAF419E6400000FF91BB /* PkkupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PkkupViewController.swift; path = viewControllers/PkkupViewController.swift; sourceTree = "<group>"; };
 		5648AAF619E640E400FF91BB /* PkkupClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PkkupClient.swift; path = models/PkkupClient.swift; sourceTree = "<group>"; };
 		5648AAFD19E6632700FF91BB /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
@@ -281,6 +285,8 @@
 				56C27E6D19E0D7E400AE1338 /* ResultTableViewCell.swift */,
 				00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */,
 				002A880F19E934C6006842B8 /* PlayersListTableViewCell.swift */,
+				304CF9A819EC6C9F00E55A8E /* GamesCell.swift */,
+				304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				56C27E6619E0C83300AE1338 /* GameDetailsViewController.swift in Sources */,
 				5648AB1F19E6632700FF91BB /* GitHubRepository.swift in Sources */,
 				5648AB2619E6632700FF91BB /* TwitterUser.swift in Sources */,
+				304CF9A919EC6C9F00E55A8E /* GamesCell.swift in Sources */,
 				5648AB2019E6632700FF91BB /* GitHubRepositoryContent.swift in Sources */,
 				5648AB2819E6632700FF91BB /* YelpBusinessResult.swift in Sources */,
 				5648AAF519E6400000FF91BB /* PkkupViewController.swift in Sources */,
@@ -538,6 +545,7 @@
 				56C27E6C19E0C87800AE1338 /* HomeViewController.swift in Sources */,
 				5648AB2419E6632700FF91BB /* RottenTomatoesClient.swift in Sources */,
 				5648AB2119E6632700FF91BB /* GitHubResource.swift in Sources */,
+				304CF9AB19EC77EB00E55A8E /* GameHistoryCell.swift in Sources */,
 				5648AB2219E6632700FF91BB /* GitHubUser.swift in Sources */,
 				5648AB2319E6632700FF91BB /* RottenTomatoesMovie.swift in Sources */,
 			);

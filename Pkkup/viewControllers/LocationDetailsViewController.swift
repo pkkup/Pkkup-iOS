@@ -7,9 +7,10 @@
 
 import UIKit
 
-class LocationDetailsViewController: PkkupViewController {
+class LocationDetailsViewController: PkkupViewController, UITableViewDataSource, UITableViewDelegate {
 
     // TODO: wire outlets from views here
+    @IBOutlet weak var gameHistoryTableView: UITableView!
 
     var location: PkkupLocation! {
         willSet(newLocation) {
@@ -21,12 +22,23 @@ class LocationDetailsViewController: PkkupViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        gameHistoryTableView.dataSource = self
+        gameHistoryTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = gameHistoryTableView.dequeueReusableCellWithIdentifier("GameHistoryCell") as GameHistoryCell
+        cell.sportNameLabel.text = "Soccer"
+        return cell
     }
     
 

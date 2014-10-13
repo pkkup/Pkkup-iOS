@@ -23,6 +23,7 @@ This is the iOS client for [Pkkup](http://pkkup.com)
 
 * [Jonathan Tsai](https://github.com/jontsai)
 * [Deepak Chidambaram](https://github.com/grcdeepak1)
+* [Chandaraprakash Kumar](https://github.com/chandaraprakash)
 
 ## License
 
