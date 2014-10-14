@@ -20,10 +20,10 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
     @IBOutlet weak var followUnfollowButton: UIButton!
     @IBOutlet weak var gamesSegment: UISegmentedControl!
 
-
     var player: PkkupPlayer! {
         willSet(newPlayer) {
-            self.playerNameLabel.text = newPlayer.firstName
+            self.playerNameLabel.text = newPlayer.name!
+            self.playerBioTextView.text = newPlayer.biography!
         }
 
         didSet(oldPlayer) {

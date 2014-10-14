@@ -10,9 +10,17 @@ import UIKit
 
 class PlayersListTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var playerLabel: UILabel!
-    
+
+    var player: PkkupPlayer! {
+        willSet(newPlayer) {
+            playerLabel.text = newPlayer.name!
+        }
+
+        didSet(oldPlayer) {
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

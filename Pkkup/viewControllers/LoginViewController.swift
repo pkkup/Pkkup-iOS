@@ -21,6 +21,10 @@ class LoginViewController: PkkupViewController {
     }
     
 
+    @IBAction func onLogin(sender: AnyObject) {
+        self.performSegueWithIdentifier("loginSegue", sender: self)
+    }
+
     /*
     // MARK: - Navigation
 

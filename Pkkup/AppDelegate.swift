@@ -11,11 +11,29 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: PKKUP_USER_DID_LOGOUT_NOTIFICATION, object: nil)
+
+        PkkupClient.getSports()
+        PkkupClient.getLocations()
+        PkkupClient.getGames()
+        PkkupClient.getPlayers()
+
+        if PkkupPlayer.currentPlayer != nil {
+            // Go to the logged in screen
+            NSLog("Current player detected: \(PkkupPlayer.currentPlayer?.name)")
+            var vc = storyboard.instantiateViewControllerWithIdentifier("PkkupNavigationController") as UIViewController
+            window?.rootViewController = vc
+        }
         return true
+    }
+
+    func userDidLogout() {
+        var vc = storyboard.instantiateInitialViewController() as UIViewController
+        window?.rootViewController = vc
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -40,6 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String, annotation: AnyObject?) -> Bool {
+        PkkupClient.sharedInstance.openURL(url)
+        return true
+    }
 }
 

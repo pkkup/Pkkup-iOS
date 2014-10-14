@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YAS-Gp-Qck">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -15,12 +15,24 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh9-Xc-OSg">
+                                <rect key="frame" x="252" y="240" width="43" height="30"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xu5-3a-OdN"/>
+                                    <segue destination="ffV-jm-lbz" kind="presentation" identifier="loginSegue" id="3g9-XU-H5W"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-371" y="-886"/>
+            <point key="canvasLocation" x="-619" y="-858"/>
         </scene>
         <!--Game Details View Controller-->
         <scene sceneID="e3C-gv-j8O">
@@ -120,7 +132,7 @@
                                     <constraint firstAttribute="height" constant="300" id="0k8-TC-ozt"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="playersListTableViewCell" rowHeight="55" id="cJf-om-gQT" customClass="PlayersListTableViewCell" customModule="Pkkup" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="playersListTableViewCell" rowHeight="55" id="cJf-om-gQT" customClass="PlayersListTableViewCell" customModule="Pkkup" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJf-om-gQT" id="2Kr-9i-CQz">
@@ -142,7 +154,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="playerLabel" destination="MSo-45-jKt" id="EIK-hz-qfe"/>
-                                            <segue destination="Shm-BJ-K2n" kind="presentation" identifier="playerDetailSegue" trigger="accessoryAction" id="mQc-Dc-Tb2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -177,7 +188,7 @@
         <!--Player Details View Controller-->
         <scene sceneID="DgJ-bz-P35">
             <objects>
-                <viewController id="tGw-Ui-fTK" userLabel="Player Details View Controller" customClass="PlayerDetailsViewController" customModule="Pkkup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tGw-Ui-fTK" userLabel="Player Details View Controller" customClass="PlayerDetailsViewController" customModule="Pkkup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iEs-DO-w6B"/>
                         <viewControllerLayoutGuide type="bottom" id="Rnz-0s-z8e"/>
@@ -192,8 +203,8 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img" translatesAutoresizingMaskIntoConstraints="NO" id="ZmW-ZW-jqW">
                                         <rect key="frame" x="8" y="8" width="97" height="91"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chandra" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHD-ct-cN1">
-                                        <rect key="frame" x="113" y="32" width="66" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Joe Pkkup Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHD-ct-cN1">
+                                        <rect key="frame" x="113" y="32" width="120" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -577,7 +588,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="PkkUp" id="JIf-cF-heJ"/>
+                    <navigationItem key="navigationItem" title="Pkkup" id="JIf-cF-heJ"/>
                     <connections>
                         <outlet property="resultsTableView" destination="ooV-kD-Vcl" id="BsB-4o-sQJ"/>
                         <outlet property="sportsCollectionView" destination="phq-yR-P5e" id="95i-eo-zmd"/>
@@ -588,10 +599,10 @@
             </objects>
             <point key="canvasLocation" x="-431" y="-138"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Pkkup Navigation Controller-->
         <scene sceneID="iGR-3b-XZo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ffV-jm-lbz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PkkupNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ffV-jm-lbz" userLabel="Pkkup Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ts0-e7-GlQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

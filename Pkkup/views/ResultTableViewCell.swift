@@ -17,13 +17,17 @@ class ResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var distanceLabel: UILabel!
     
-    var pkkupGame : PkkupGame! {
-        didSet(pkkupGame) {
-            timeLabel.text = "8:45am 12th Apr, 2014 (Tuesday)"
-            locationLabel.text = "Cuesta Park, 233 Grant Road"
+    var game : PkkupGame! {
+        willSet(newGame) {
+            timeLabel.text = newGame.getFormattedStartTime()
+            var location = newGame.getLocation()
+            locationLabel.text = "\(location.name!) \(location.address!)"
             numPlayersLabel.text = "/10 Players"
             numRsvpLabel.text = "6"
             distanceLabel.text = "1.2 miles"
+        }
+        didSet(oldGame) {
+            
         }
     }
     

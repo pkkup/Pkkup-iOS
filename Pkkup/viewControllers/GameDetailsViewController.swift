@@ -11,29 +11,28 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
 
     
     @IBOutlet weak var timeLabel: UILabel!
-    
     @IBOutlet weak var placeLabel: UILabel!
-    
     @IBOutlet weak var playersListTable: UITableView!
     
-    var playerArray = ["Deepak", "Jonathan", "Chandra", "Tim", "Shen",
-                       "John", "Jim", "Russel", "Matt", "Brandon"]
-    
-    var pkkupPlayer: PkkupPlayer!;
-    
+    var playersConfirmed: [PkkupPlayer]!
+
     // TODO: wire outlets from views here
     var game: PkkupGame! {
-        didSet(game) {
-
+        willSet(newGame) {
+            self.navigationItem.title = newGame.sport?.name
+        }
+        didSet(oldGame) {
+            
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         playersListTable.dataSource = self
         playersListTable.delegate = self
-        timeLabel.text = "8:45am 12th Apr, 2014 (Tuesday)"
-        placeLabel.text = "Cuesta Park, 233 Grant Road"
-        // Do any additional setup after loading the view.
+        var location = game!.getLocation()
+        timeLabel.text = game.getFormattedStartTime()
+        placeLabel.text = "\(location.name!), \(location.address!), \(location.city!) \(location.state!)"
+        playersConfirmed = game!.getPlayersConfirmed()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,20 +42,33 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
     
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return playersConfirmed!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = playersListTable.dequeueReusableCellWithIdentifier("playersListTableViewCell") as PlayersListTableViewCell
-            cell.playerLabel.text = playerArray[indexPath.row]
-            return cell
+        var player = playersConfirmed![indexPath.row]
+        cell.player = player
+        return cell
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Players Going:"
     }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var player = playersConfirmed![indexPath.row]
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var playerDetailsViewController = storyboard.instantiateViewControllerWithIdentifier("PlayerDetailsViewController") as PlayerDetailsViewController
+        playerDetailsViewController.view.layoutSubviews()
+        playerDetailsViewController.player = player
+        self.navigationController?.pushViewController(playerDetailsViewController, animated: true)
+    }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var player = playersConfirmed![indexPath.row]
         println("row selected..")
     }
 
@@ -64,15 +76,5 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        println("prepareForSegue to PlayerDetails")
-        if (segue.identifier == "playerDetailSegue") {
-            var playerDetailVC = segue.destinationViewController as PlayerDetailsViewController
-            /*let indexPath = self.playersListTable.indexPathForSelectedRow()?.row
-            pkkupPlayer.firstName = playerArray[indexPath!]
-            playerDetailVC.player = pkkupPlayer*/
-        }
-    }
-
 
 }
