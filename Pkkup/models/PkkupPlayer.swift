@@ -22,6 +22,7 @@ class PkkupPlayer {
     var name: String?
     var username: String?
     var email: String?
+    var gravatarHash: String?
     var latitude: Double?
     var longitude: Double?
     var biography: String?
@@ -42,6 +43,7 @@ class PkkupPlayer {
         id = dictionary["id"] as? Int
         username = dictionary["username"] as? String
         name = dictionary["name"] as? String
+        gravatarHash = dictionary["gravatar_hash"] as? String
         biography = dictionary["biography"] as? String
 
         _pkkupPlayerCache[id!] = self
@@ -89,7 +91,8 @@ class PkkupPlayer {
         NSNotificationCenter.defaultCenter().postNotificationName(PKKUP_USER_DID_LOGOUT_NOTIFICATION, object: nil)
     }
 
-    func getGravatarImageUrl() {
-        
+    func getGravatarImageUrl() -> String {
+        var url = "http://www.gravatar.com/avatar/\(self.gravatarHash!)"
+        return url
     }
 }

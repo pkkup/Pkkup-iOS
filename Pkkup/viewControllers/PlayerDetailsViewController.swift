@@ -15,7 +15,7 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var playerLocationLabel: UILabel!
     @IBOutlet weak var playerSportsLabel: UILabel!
-    @IBOutlet weak var playerBioTextView: UITextView!
+    @IBOutlet weak var biographyLabel: UILabel!
     @IBOutlet weak var gamesTableView: UITableView!
     @IBOutlet weak var followUnfollowButton: UIButton!
     @IBOutlet weak var gamesSegment: UISegmentedControl!
@@ -23,7 +23,9 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
     var player: PkkupPlayer! {
         willSet(newPlayer) {
             self.playerNameLabel.text = newPlayer.name!
-            self.playerBioTextView.text = newPlayer.biography!
+            self.biographyLabel.text = newPlayer.biography!
+            HTKImageUtils.sharedInstance.displayImageUrl(newPlayer.getGravatarImageUrl(), imageView: playerImageView)
+            self.navigationItem.title = newPlayer.name!
         }
 
         didSet(oldPlayer) {
@@ -36,11 +38,8 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
         gamesTableView.delegate = self
 
         //customize player image
-        self.playerImageView.layer.cornerRadius = 11.0
-        self.playerImageView.layer.borderWidth = 1.0
-        //self.playerImageView.layer.borderColor.borderColor = UIColor.blackColor()
+        self.playerImageView.layer.cornerRadius = 5
         self.playerImageView.clipsToBounds = true
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,10 +78,5 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
         return cell
         
     }
-
-    @IBAction func onBack(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
 
 }
