@@ -28,8 +28,6 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         // Do any additional setup after loading the view.
         sportsCollectionView.dataSource = self
         sportsCollectionView.delegate   = self
-        
-        println(_GAMES)
     }
 
     override func didReceiveMemoryWarning() {
