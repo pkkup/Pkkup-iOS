@@ -12,12 +12,13 @@ class PkkupGroup {
     
     var id: Int?
     var name: String?
-
+    var isSelected: Bool?
     init(dictionary: NSDictionary) {
         self.groupDictionary = dictionary
         
         id = dictionary["id"] as? Int
         name = dictionary["name"] as? String
+        isSelected = false
     }
 
     class func groupsWithArray(array: [NSDictionary]) -> [PkkupGroup] {
