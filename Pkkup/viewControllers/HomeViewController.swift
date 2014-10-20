@@ -56,6 +56,14 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     //MARK: - Delegate
     func sportWasSelected(sportCell: SportsCollectionViewCell, selectedSport: String) -> Void {
         NSLog(selectedSport)
+        for sport in PkkupSport.sports! {
+            if(sport.name? == selectedSport) {
+                sport.isSportSelected = true
+            } else {
+                sport.isSportSelected = false
+            }
+        }
+        self.sportsCollectionView?.reloadData()
     }
     //MARK: - CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,6 +74,11 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("sportsCollectionViewCell", forIndexPath: indexPath) as SportsCollectionViewCell
         var sport = PkkupSport.sports![indexPath.row]
         cell.sportButton.setTitle(sport.name!, forState: UIControlState.Normal)
+        if(sport.isSportSelected == true ) {
+            cell.buttonSelectedView.backgroundColor = UIColor.orangeColor()
+        } else {
+            cell.buttonSelectedView.backgroundColor = UIColor.clearColor()
+        }
         cell.delegate = self
         return cell
     }

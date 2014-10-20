@@ -26,7 +26,12 @@ class SportsCollectionViewCell: UICollectionViewCell {
     
     @IBAction func didSelect(sender: UIButton) {
         NSLog("Button was Selected \(sender.currentTitle!)")
-        self.buttonSelectedView.backgroundColor = UIColor.orangeColor()
+        if(self.buttonSelectedView.backgroundColor == UIColor.orangeColor()) {
+            self.buttonSelectedView.backgroundColor = UIColor.clearColor()
+        } else {
+            self.buttonSelectedView.backgroundColor = UIColor.orangeColor()
+        }
+        
         delegate?.sportWasSelected(self, selectedSport: sender.currentTitle!)
         //We have to clearOtherCells colors
         //I think, we have to use delegate
