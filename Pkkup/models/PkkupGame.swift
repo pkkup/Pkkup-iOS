@@ -7,7 +7,7 @@
 
 import Foundation
 
-var _pkkupGameCache = [Int:PkkupGame]()
+var _pkkupGameCache = NSCache()
 
 class PkkupGame {
     var gameDictionary: NSDictionary?
@@ -41,9 +41,9 @@ class PkkupGame {
         playersConfirmedIds = dictionary["confirmed"] as? [Int]
         playersDeclinedIds = dictionary["declined"] as? [Int]
         playersMaybeIds = dictionary["maybe"] as? [Int]
-        _pkkupGameCache[id!] = self
+        _pkkupGameCache.setObject(self, forKey: id!)
     }
-    
+
     class func gamesWithArray(array: [NSDictionary]) -> [PkkupGame] {
         var games = [PkkupGame]()
         for dictionary in array {
@@ -52,8 +52,13 @@ class PkkupGame {
         return games
     }
 
-    class func getCached(id: Int) -> PkkupGame {
-        var game = _pkkupGameCache[id]!
+    class func get(id: Int) -> PkkupGame {
+        var game = PkkupGame.getCached(id)!
+        return game
+    }
+
+    class func getCached(id: Int) -> PkkupGame? {
+        var game = _pkkupGameCache.objectForKey(id) as? PkkupGame
         return game
     }
 
@@ -61,7 +66,7 @@ class PkkupGame {
         if location != nil {
             return location!
         } else {
-            return PkkupLocation.getCached(locationId!)
+            return PkkupLocation.get(locationId!)
         }
     }
 
@@ -76,7 +81,7 @@ class PkkupGame {
     func getPlayersConfirmed() -> [PkkupPlayer] {
         var players = self.playersConfirmedIds!.map {
             (playerId: Int) -> PkkupPlayer in
-            PkkupPlayer.getCached(playerId)
+            PkkupPlayer.get(playerId)
         }
         return players
     }

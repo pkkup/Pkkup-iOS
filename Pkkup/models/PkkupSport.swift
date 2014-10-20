@@ -10,7 +10,7 @@ import Foundation
 var _sports: [PkkupSport]?
 var PKKUP_SPORTS_KEY = "kPkkupSports"
 
-var _pkkupSportCache = [Int:PkkupSport]()
+var _pkkupSportCache = NSCache()
 
 class PkkupSport {
     var sportDictionary: NSDictionary?
@@ -30,7 +30,7 @@ class PkkupSport {
         
 //        iconImageUrl = dictionary["img_url"] as? String
 //        isSportSelected = dictionary["isSelected"] as? Bool
-        _pkkupSportCache[id!] = self
+        _pkkupSportCache.setObject(self, forKey: id!)
     }
 
     class func sportsWithArray(array: [NSDictionary]) -> [PkkupSport] {
@@ -67,8 +67,14 @@ class PkkupSport {
         }
     }
 
-    class func getCached(id: Int) -> PkkupSport {
-        return _pkkupSportCache[id]!
+    class func get(id: Int) -> PkkupSport {
+        var sport = PkkupSport.getCached(id)!
+        return sport
+    }
+
+    class func getCached(id: Int) -> PkkupSport? {
+        var sport = _pkkupSportCache.objectForKey(id) as? PkkupSport
+        return sport
     }
 
     func getPlayers() -> [PkkupPlayer] {
@@ -82,5 +88,4 @@ class PkkupSport {
     func getGames() -> [PkkupGame] {
         return []
     }
-
 }

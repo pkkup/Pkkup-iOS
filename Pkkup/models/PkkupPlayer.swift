@@ -12,7 +12,7 @@ let PKKUP_CURRENT_USER_KEY = "kPkkupCurrentUserKey"
 let PKKUP_USER_DID_LOGIN_NOTIFICATION = "pkkupUserDidLoginNotification"
 let PKKUP_USER_DID_LOGOUT_NOTIFICATION = "pkkupUserDidLogoutNotification"
 
-var _pkkupPlayerCache = [Int:PkkupPlayer]()
+var _pkkupPlayerCache = NSCache()
 
 class PkkupPlayer {
     var playerDictionary: NSDictionary
@@ -49,7 +49,8 @@ class PkkupPlayer {
         biography = dictionary["biography"] as? String
         city = dictionary["city"] as? String
         state = dictionary["state"] as? String
-        _pkkupPlayerCache[id!] = self
+        
+        _pkkupPlayerCache.setObject(self, forKey: id!)
     }
 
     class func playersWithArray(array: [NSDictionary]) -> [PkkupPlayer] {
@@ -60,8 +61,13 @@ class PkkupPlayer {
         return players
     }
 
-    class func getCached(id: Int) -> PkkupPlayer {
-        var player = _pkkupPlayerCache[id]!
+    class func get(id: Int) -> PkkupPlayer {
+        var player = PkkupPlayer.getCached(id)!
+        return player
+    }
+
+    class func getCached(id: Int) -> PkkupPlayer? {
+        var player = _pkkupPlayerCache.objectForKey(id) as? PkkupPlayer
         return player
     }
 
