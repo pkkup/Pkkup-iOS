@@ -7,7 +7,7 @@
 
 import Foundation
 
-var _pkkupLocationCache = [Int:PkkupLocation]()
+var _pkkupLocationCache = NSCache()
 
 class PkkupLocation {
     var locationDictionary: NSDictionary
@@ -37,7 +37,7 @@ class PkkupLocation {
         zipcode = dictionary["zipcode"] as? String
         latitude = dictionary["latitude"] as? Double
         longitude = dictionary["longitude"] as? Double
-        _pkkupLocationCache[id!] = self
+        _pkkupLocationCache.setObject(self, forKey: id!)
     }
 
     class func locationsWithArray(array: [NSDictionary]) -> [PkkupLocation] {
@@ -48,8 +48,13 @@ class PkkupLocation {
         return locations
     }
 
-    class func getCached(id: Int) -> PkkupLocation {
-        var location = _pkkupLocationCache[id]!
+    class func get(id: Int) -> PkkupLocation {
+        var location = PkkupLocation.getCached(id)!
+        return location
+    }
+
+    class func getCached(id: Int) -> PkkupLocation? {
+        var location = _pkkupLocationCache.objectForKey(id) as? PkkupLocation
         return location
     }
 
