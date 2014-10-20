@@ -10,6 +10,7 @@
 		002A881019E934C6006842B8 /* PlayersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002A880F19E934C6006842B8 /* PlayersListTableViewCell.swift */; };
 		003AE06C19F472000038D478 /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE06B19F472000038D478 /* MyGamesViewController.swift */; };
 		003AE06E19F47A020038D478 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE06D19F47A020038D478 /* CreateGameViewController.swift */; };
+		003AE07019F49B690038D478 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE06F19F49B690038D478 /* FriendsViewController.swift */; };
 		00E7C9BE19E783360045C303 /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */; };
 		15B8B7DBA7446582DA31C7D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1292BD8BA896989F40FAA9 /* libPods.a */; };
 		304CF9A919EC6C9F00E55A8E /* GamesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CF9A819EC6C9F00E55A8E /* GamesCell.swift */; };
@@ -68,6 +69,7 @@
 		002A880F19E934C6006842B8 /* PlayersListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersListTableViewCell.swift; path = views/PlayersListTableViewCell.swift; sourceTree = "<group>"; };
 		003AE06B19F472000038D478 /* MyGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGamesViewController.swift; path = viewControllers/MyGamesViewController.swift; sourceTree = "<group>"; };
 		003AE06D19F47A020038D478 /* CreateGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateGameViewController.swift; path = viewControllers/CreateGameViewController.swift; sourceTree = "<group>"; };
+		003AE06F19F49B690038D478 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsViewController.swift; path = viewControllers/FriendsViewController.swift; sourceTree = "<group>"; };
 		00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportsCollectionViewCell.swift; path = views/SportsCollectionViewCell.swift; sourceTree = "<group>"; };
 		304CF9A819EC6C9F00E55A8E /* GamesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCell.swift; sourceTree = "<group>"; };
 		304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				5648AAF419E6400000FF91BB /* PkkupViewController.swift */,
 				003AE06B19F472000038D478 /* MyGamesViewController.swift */,
 				003AE06D19F47A020038D478 /* CreateGameViewController.swift */,
+				003AE06F19F49B690038D478 /* FriendsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				56C27E6E19E0D7E400AE1338 /* ResultTableViewCell.swift in Sources */,
 				003AE06C19F472000038D478 /* MyGamesViewController.swift in Sources */,
 				56C27E6A19E0C85600AE1338 /* PlayerDetailsViewController.swift in Sources */,
+				003AE07019F49B690038D478 /* FriendsViewController.swift in Sources */,
 				56C390C119E3913C00CC2E61 /* PkkupLocation.swift in Sources */,
 				5648AB2519E6632700FF91BB /* Tweet.swift in Sources */,
 				56C390BF19E3912900CC2E61 /* PkkupPlayer.swift in Sources */,

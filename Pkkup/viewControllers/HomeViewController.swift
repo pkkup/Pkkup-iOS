@@ -28,6 +28,8 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         // Do any additional setup after loading the view.
         sportsCollectionView.dataSource = self
         sportsCollectionView.delegate   = self
+        resultsTableView.rowHeight = UITableViewAutomaticDimension
+        resultsTableView.estimatedRowHeight = 120.0
     }
 
     override func didReceiveMemoryWarning() {

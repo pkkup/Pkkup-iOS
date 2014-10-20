@@ -29,9 +29,11 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         playersListTable.dataSource = self
         playersListTable.delegate = self
+        playersListTable.rowHeight = UITableViewAutomaticDimension
+        playersListTable.estimatedRowHeight = 120.0
         var location = game!.getLocation()
         timeLabel.text = game.getFormattedStartTime()
-        placeLabel.text = "\(location.name!), \(location.address!), \(location.city!) \(location.state!)"
+        placeLabel.text = "\(location.name!),\n\(location.address!),\n\(location.city!) \(location.state!)"
         playersConfirmed = game!.getPlayersConfirmed()
     }
 
