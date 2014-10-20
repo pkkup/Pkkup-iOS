@@ -26,6 +26,8 @@ class PkkupPlayer {
     var latitude: Double?
     var longitude: Double?
     var biography: String?
+    var city: String?
+    var state: String?
 
     // Relations
     var sports: [PkkupSport]?
@@ -45,7 +47,8 @@ class PkkupPlayer {
         name = dictionary["name"] as? String
         gravatarHash = dictionary["gravatar_hash"] as? String
         biography = dictionary["biography"] as? String
-
+        city = dictionary["city"] as? String
+        state = dictionary["state"] as? String
         _pkkupPlayerCache[id!] = self
     }
 

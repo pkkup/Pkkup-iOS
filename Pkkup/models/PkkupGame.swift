@@ -67,7 +67,8 @@ class PkkupGame {
 
     func getFormattedStartTime() -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a"
+        //dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a"
+        dateFormatter.dateFormat = "EEE, MMM d, yyyy 'at' h:mm a"
         var formatted = dateFormatter.stringFromDate(self.startTime!)
         return formatted
     }
