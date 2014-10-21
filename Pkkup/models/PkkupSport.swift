@@ -52,6 +52,7 @@ class PkkupSport {
             }
             return _sports
         }
+
         set (sports) {
             _sports = sports
             if _sports != nil {

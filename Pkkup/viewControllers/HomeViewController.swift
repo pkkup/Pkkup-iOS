@@ -10,17 +10,15 @@ import UIKit
 
 class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, SportsCellDelegate {
 
-
     @IBOutlet weak var sportsContainerView: UIView!
     @IBOutlet var sportsCollectionView: UICollectionView!
     @IBOutlet weak private var resultsTableView: UITableView!
 
     let SPORT_CHOICES_DEFAULT_HEIGHT = CGFloat(44)
-    
-    var sectionsArray = [ "San Jose, CA", "Santa Clara, CA", "Sunnyvale, CA", "Mountain View, CA",
-                          "Palo Alto, CA", "Menlo Park, CA", "Redwood City, CA", "Milpitas, CA", "Fremont, CA"]
-    var gameTimeString = "8.00 pm, 8th Apr, 2014"
-    var gameLocation = "Cuesta Park"
+    var gamesByCity = [String:[PkkupGame]]()
+    var selectedSport:String?
+
+    var sectionHeadings = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +28,8 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         sportsCollectionView.delegate   = self
         resultsTableView.rowHeight = UITableViewAutomaticDimension
         resultsTableView.estimatedRowHeight = 120.0
+
+        reloadGames()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,27 +37,61 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
 
+    func reloadGames() {
+        var games = _GAMES.filter({
+            (game: PkkupGame) -> Bool in
+            game.sport!.name! == self.selectedSport
+        })
+
+        var citiesSeen = [String:Bool]()
+        var newSectionHeadings = [String]()
+        gamesByCity = [String:[PkkupGame]]()
+        
+        for game in games {
+            var location = game.getLocation()
+            var city = location.getCityAndStateString()
+
+            if citiesSeen[city] == nil {
+                citiesSeen[city] = true
+                newSectionHeadings.append(city)
+                gamesByCity[city] = [PkkupGame]()
+            }
+            var gamesInCity = gamesByCity[city]!
+            gamesInCity.append(game)
+            gamesByCity[city] = gamesInCity
+        }
+        self.sectionHeadings = newSectionHeadings
+        self.resultsTableView.reloadData()
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return _GAMES.count * 5
+        var cityAndState = sectionHeadings[section]
+        var gamesInCity = gamesByCity[cityAndState]!
+        var numRows = gamesInCity.count
+        return numRows
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionsArray.count
+        return self.sectionHeadings.count
     }
+
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionsArray[section]
+        return self.sectionHeadings[section]
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = resultsTableView.dequeueReusableCellWithIdentifier("ResultViewCell") as ResultTableViewCell
-        var game = _GAMES[indexPath.row % _GAMES.count]
+        var section = indexPath.section
+        var cityAndState = sectionHeadings[section]
+        var gamesInCity = gamesByCity[cityAndState]!
+        var game = gamesInCity[indexPath.row]
         cell.game = game
         return cell
     }
     
     //MARK: - Delegate
     func sportWasSelected(sportCell: SportsCollectionViewCell, selectedSport: String) -> Void {
-        NSLog(selectedSport)
+        self.selectedSport = selectedSport
         for sport in PkkupSport.sports! {
             if(sport.name? == selectedSport) {
                 sport.isSportSelected = true
@@ -66,7 +100,9 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
             }
         }
         self.sportsCollectionView?.reloadData()
+        self.reloadGames()
     }
+
     //MARK: - CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return PkkupSport.sports!.count
@@ -90,10 +126,10 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "gameDetailSegue") {
-            let gameDetVC = segue.destinationViewController as GameDetailsViewController
+            let gameDetailsViewController = segue.destinationViewController as GameDetailsViewController
             //let indexPath = self.resultsTableView.indexPathForSelectedRow()?.row
             var game = _GAMES[0]
-            gameDetVC.game = game
+            gameDetailsViewController.game = game
         }
     }
 

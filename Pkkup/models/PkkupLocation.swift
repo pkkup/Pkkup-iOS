@@ -58,6 +58,11 @@ class PkkupLocation {
         return location
     }
 
+    func getCityAndStateString() -> String {
+        var value = "\(self.city!), \(self.state!)"
+        return value
+    }
+
     func getWeather() {
         // get from Forecast.io
         // temp, status (sunny, cloudy, etc)
