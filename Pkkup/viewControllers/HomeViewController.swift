@@ -97,4 +97,11 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         }
     }
 
+    @IBAction func onCreateGame(sender: AnyObject) {
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var createGameViewController = storyboard.instantiateViewControllerWithIdentifier("CreateGameViewController") as CreateGameViewController
+        createGameViewController.view.layoutSubviews()
+        //createGameViewController.player = player
+        self.navigationController?.pushViewController(createGameViewController, animated: true)
+    }
 }
