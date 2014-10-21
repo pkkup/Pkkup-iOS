@@ -31,6 +31,8 @@ class PkkupPlayer {
 
     // Relations
     var sports: [PkkupSport]?
+    var followerIds: [Int]?
+    var followingIds: [Int]?
     var followers: [PkkupPlayer]?
     var following: [PkkupPlayer]?
     var gamesConfirmed: [PkkupGame]?
@@ -49,15 +51,26 @@ class PkkupPlayer {
         biography = dictionary["biography"] as? String
         city = dictionary["city"] as? String
         state = dictionary["state"] as? String
-        
+
+        followerIds = dictionary["followers"] as? [Int]
+        followingIds = dictionary["following"] as? [Int]
+
         _pkkupPlayerCache.setObject(self, forKey: id!)
     }
 
-    class func playersWithArray(array: [NSDictionary]) -> [PkkupPlayer] {
-        var players = [PkkupPlayer]()
-        for dictionary in array {
-            players.append(PkkupPlayer(dictionary: dictionary))
-        }
+    class func playersWithArray(playersArray: [NSDictionary]) -> [PkkupPlayer] {
+        var players = playersArray.map({
+            (dictionary: NSDictionary) -> PkkupPlayer in
+            PkkupPlayer(dictionary: dictionary)
+        })
+        return players
+    }
+
+    class func playersWithIds(playerIds: [Int]) -> [PkkupPlayer] {
+        var players = playerIds.map({
+            (playerId: Int) -> PkkupPlayer in
+            PkkupPlayer.get(playerId)
+        })
         return players
     }
 
@@ -103,5 +116,15 @@ class PkkupPlayer {
     func getGravatarImageUrl() -> String {
         var url = "http://www.gravatar.com/avatar/\(self.gravatarHash!)"
         return url
+    }
+
+    func getFollowers() -> [PkkupPlayer] {
+        var followers = PkkupPlayer.playersWithIds(self.followerIds!)
+        return followers
+    }
+
+    func getFollowing() -> [PkkupPlayer] {
+        var following = PkkupPlayer.playersWithIds(self.followingIds!)
+        return following
     }
 }
