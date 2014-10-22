@@ -21,10 +21,14 @@ class ResultTableViewCell: UITableViewCell {
         willSet(newGame) {
             timeLabel.text = newGame.getFormattedStartTime()
             var location = newGame.getLocation()
-            locationLabel.text = "\(location.name!) \(location.address!)"
+            locationLabel.text = "\(location.name!)\n\(location.address!)"
             numPlayersLabel.text = "/10 Players"
             numRsvpLabel.text = "6"
             distanceLabel.text = "1.2 miles"
+            
+            var bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.orangeColor()
+            self.selectedBackgroundView = bgColorView
         }
         didSet(oldGame) {
             

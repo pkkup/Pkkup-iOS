@@ -28,6 +28,11 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         sportsCollectionView.delegate   = self
         resultsTableView.rowHeight = UITableViewAutomaticDimension
         resultsTableView.estimatedRowHeight = 120.0
+        var tblView =  UIView(frame: CGRectZero)
+        resultsTableView.tableFooterView = tblView
+        resultsTableView.tableFooterView?.hidden = true
+        resultsTableView.backgroundColor = UIColor.blackColor()
+        self.tabBarController?.tabBar.tintColor = UIColor.orangeColor()
 
         reloadGames()
     }
@@ -87,6 +92,10 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         var game = gamesInCity[indexPath.row]
         cell.game = game
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        resultsTableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     //MARK: - Delegate

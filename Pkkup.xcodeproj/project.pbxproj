@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0029879119F7938B00199007 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0029879019F7938B00199007 /* TabBarController.swift */; };
 		002A881019E934C6006842B8 /* PlayersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002A880F19E934C6006842B8 /* PlayersListTableViewCell.swift */; };
 		003AE06C19F472000038D478 /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE06B19F472000038D478 /* MyGamesViewController.swift */; };
 		003AE06E19F47A020038D478 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE06D19F47A020038D478 /* CreateGameViewController.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0029879019F7938B00199007 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = viewControllers/TabBarController.swift; sourceTree = "<group>"; };
 		002A880F19E934C6006842B8 /* PlayersListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersListTableViewCell.swift; path = views/PlayersListTableViewCell.swift; sourceTree = "<group>"; };
 		003AE06B19F472000038D478 /* MyGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGamesViewController.swift; path = viewControllers/MyGamesViewController.swift; sourceTree = "<group>"; };
 		003AE06D19F47A020038D478 /* CreateGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateGameViewController.swift; path = viewControllers/CreateGameViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				003AE06B19F472000038D478 /* MyGamesViewController.swift */,
 				003AE06D19F47A020038D478 /* CreateGameViewController.swift */,
 				003AE06F19F49B690038D478 /* FriendsViewController.swift */,
+				0029879019F7938B00199007 /* TabBarController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				56C27E6819E0C84300AE1338 /* LocationDetailsViewController.swift in Sources */,
 				00E7C9BE19E783360045C303 /* SportsCollectionViewCell.swift in Sources */,
 				56C390C919E3981500CC2E61 /* SettingsViewController.swift in Sources */,
+				0029879119F7938B00199007 /* TabBarController.swift in Sources */,
 				5648AAF719E640E400FF91BB /* PkkupClient.swift in Sources */,
 				5648AB2C19E6632700FF91BB /* HTKNotificationUtils.swift in Sources */,
 				5648AB2919E6632700FF91BB /* YelpCategory.swift in Sources */,

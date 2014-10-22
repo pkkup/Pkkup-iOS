@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -519,8 +519,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ooV-kD-Vcl" userLabel="ResultsTableView">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ResultViewCell" rowHeight="73" id="me0-dw-xka" userLabel="ResultsViewCell" customClass="ResultTableViewCell" customModule="Pkkup" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -529,33 +527,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="TimeLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xui-5i-JOK">
-                                                    <rect key="frame" x="10" y="10" width="67" height="26"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <rect key="frame" x="10" y="10" width="49" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="numPlayersLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB8-m9-u2R">
-                                                    <rect key="frame" x="461" y="10" width="96" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <rect key="frame" x="476" y="10" width="81" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu9-ex-0l2">
-                                                    <rect key="frame" x="10" y="46" width="85" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <rect key="frame" x="10" y="50" width="67" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distanceLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wg-qZ-IGL">
-                                                    <rect key="frame" x="479" y="35" width="78" height="19"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="498" y="32" width="59" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numRsvpLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2s-2a-Ttj">
-                                                    <rect key="frame" x="376" y="10" width="83" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <rect key="frame" x="404" y="10" width="70" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -579,6 +577,7 @@
                                                 <constraint firstItem="3wg-qZ-IGL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pu9-ex-0l2" secondAttribute="trailing" constant="8" id="wFT-jZ-k0S"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.077126240910000005" green="0.099502362689999999" blue="0.14979272960000001" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="distanceLabel" destination="3wg-qZ-IGL" id="aZY-wq-Y4L"/>
                                             <outlet property="locationLabel" destination="pu9-ex-0l2" id="5LE-zU-BiI"/>
@@ -658,7 +657,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="M34-Dw-ucr" firstAttribute="leading" secondItem="vDb-vD-nvZ" secondAttribute="leading" id="04T-I9-qbj"/>
@@ -679,7 +678,8 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Pkkup" id="JIf-cF-heJ">
-                        <barButtonItem key="rightBarButtonItem" title="Create Game" id="CGY-xW-44t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="CGY-xW-44t">
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onCreateGame:" destination="z55-9v-zE0" id="l7B-Dw-r5J"/>
                             </connections>
@@ -699,7 +699,7 @@
         <scene sceneID="iGR-3b-XZo">
             <objects>
                 <navigationController storyboardIdentifier="PkkupNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ffV-jm-lbz" userLabel="Pkkup Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" id="CGA-b6-nr2"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="CGA-b6-nr2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ts0-e7-GlQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1010,7 +1010,7 @@
         <!--TabBarController-->
         <scene sceneID="ldI-b0-i2r">
             <objects>
-                <tabBarController title="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="qs5-fV-45M" sceneMemberID="viewController">
+                <tabBarController title="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="qs5-fV-45M" customClass="TabBarController" customModule="Pkkup" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="MOc-yY-iFg">
@@ -1032,7 +1032,7 @@
         <scene sceneID="kqx-QJ-Rbd">
             <objects>
                 <navigationController title="FriendsNavController" automaticallyAdjustsScrollViewInsets="NO" id="Nff-cS-ZFI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="fID-XS-RYg"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends" id="fID-XS-RYg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lDU-oX-CwY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1051,7 +1051,7 @@
         <scene sceneID="dck-b2-Su0">
             <objects>
                 <navigationController title="SettingsNavController" automaticallyAdjustsScrollViewInsets="NO" id="fh3-F7-i8s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="2AW-a1-vRs"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="2AW-a1-vRs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WAC-MK-71c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1070,7 +1070,7 @@
         <scene sceneID="V4N-v8-smo">
             <objects>
                 <navigationController title="MyGamesNavController" automaticallyAdjustsScrollViewInsets="NO" id="eH0-1g-fux" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Games" id="G3P-px-pLb"/>
+                    <tabBarItem key="tabBarItem" title="My Games" image="games" id="G3P-px-pLb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ER4-6T-hH6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1086,4 +1086,10 @@
             <point key="canvasLocation" x="-411" y="593"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="discover" width="24" height="24"/>
+        <image name="friends" width="32" height="22"/>
+        <image name="games" width="25" height="25"/>
+        <image name="settings" width="32" height="32"/>
+    </resources>
 </document>
