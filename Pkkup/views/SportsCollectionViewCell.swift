@@ -9,20 +9,29 @@
 import UIKit
 
 protocol SportsCellDelegate {
-    func sportWasSelected(sportCell: SportsCollectionViewCell, selectedSport: String) -> Void
+    func sportWasSelected(sportCell: SportsCollectionViewCell, sportName: String) -> Void
 }
 
 class SportsCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var sportButton: UIButton!
-    @IBOutlet weak var buttonSelectedView: UIView!
+    @IBOutlet weak private var sportButton: UIButton!
+    @IBOutlet weak private var buttonSelectedView: UIView!
+
     var delegate: SportsCellDelegate?
-    /*
-    var pkkupSport: PkkupSport {
-        didSet(newSport) {
-            sportButton.setTitle(pkkupSport.name, forState: UIControlState.Normal)
+
+    var sport: PkkupSport! {
+        willSet(newSport) {
+            sportButton.setTitle(newSport.name, forState: UIControlState.Normal)
+            if newSport.isSelected != nil && newSport.isSelected! {
+                buttonSelectedView.backgroundColor = UIColor.orangeColor()
+            } else {
+                buttonSelectedView.backgroundColor = UIColor.clearColor()
+            }
         }
-    }*/
+
+        didSet(oldSport) {
+        }
+    }
     
     @IBAction func didSelect(sender: UIButton) {
         NSLog("Button was Selected \(sender.currentTitle!)")
@@ -32,11 +41,7 @@ class SportsCollectionViewCell: UICollectionViewCell {
             self.buttonSelectedView.backgroundColor = UIColor.orangeColor()
         }
         
-        delegate?.sportWasSelected(self, selectedSport: sender.currentTitle!)
-        //We have to clearOtherCells colors
-        //I think, we have to use delegate
-        
-        //We have to reload the Table, if the selection has changed
+        delegate?.sportWasSelected(self, sportName: sender.currentTitle!)
     }
     
 }
