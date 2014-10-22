@@ -13,6 +13,7 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var playersListTable: UITableView!
+    @IBOutlet weak var joinSegControl: UISegmentedControl!
     
     var playersConfirmed: [PkkupPlayer]!
 
@@ -74,6 +75,11 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
         println("row selected..")
     }
 
+    @IBAction func OnJoinSegmentedControlChange(sender: UISegmentedControl) {
+        var selectedSegment = self.joinSegControl.selectedSegmentIndex
+        NSLog("selectedSegmentIndex :\(selectedSegment)")
+        
+    }
     
     // MARK: - Navigation
 

@@ -33,10 +33,6 @@ class SportsCollectionViewCell: UICollectionViewCell {
         }
         
         delegate?.sportWasSelected(self, selectedSport: sender.currentTitle!)
-        //We have to clearOtherCells colors
-        //I think, we have to use delegate
-        
-        //We have to reload the Table, if the selection has changed
     }
     
 }
