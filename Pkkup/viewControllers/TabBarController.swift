@@ -1,17 +1,20 @@
 //
-//  LoginViewController.swift
+//  TabBarController.swift
 //  Pkkup
 //
+//  Created by Deepak on 10/22/14.
 //  Copyright (c) 2014 Pkkup. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: PkkupViewController {
+class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,10 +22,6 @@ class LoginViewController: PkkupViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func onLogin(sender: AnyObject) {
-        self.performSegueWithIdentifier("loginSegue", sender: self)
-    }
 
     /*
     // MARK: - Navigation

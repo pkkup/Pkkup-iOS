@@ -40,7 +40,6 @@ class SportsCollectionViewCell: UICollectionViewCell {
         } else {
             self.buttonSelectedView.backgroundColor = UIColor.orangeColor()
         }
-        
         delegate?.sportWasSelected(self, sportName: sender.currentTitle!)
     }
     
