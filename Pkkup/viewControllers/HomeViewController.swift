@@ -90,15 +90,10 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     }
     
     //MARK: - Delegate
-    func sportWasSelected(sportCell: SportsCollectionViewCell, selectedSport: String) -> Void {
-        self.selectedSport = selectedSport
-        for sport in PkkupSport.sports! {
-            if(sport.name? == selectedSport) {
-                sport.isSportSelected = true
-            } else {
-                sport.isSportSelected = false
-            }
-        }
+    func sportWasSelected(sportCell: SportsCollectionViewCell, sportName: String) -> Void {
+        self.selectedSport = sportName
+        PkkupSport.selectSportWithName(sportName)
+
         self.sportsCollectionView?.reloadData()
         self.reloadGames()
     }
@@ -111,12 +106,7 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("sportsCollectionViewCell", forIndexPath: indexPath) as SportsCollectionViewCell
         var sport = PkkupSport.sports![indexPath.row]
-        cell.sportButton.setTitle(sport.name!, forState: UIControlState.Normal)
-        if(sport.isSportSelected == true ) {
-            cell.buttonSelectedView.backgroundColor = UIColor.orangeColor()
-        } else {
-            cell.buttonSelectedView.backgroundColor = UIColor.clearColor()
-        }
+        cell.sport = sport
         cell.delegate = self
         return cell
     }

@@ -19,8 +19,9 @@ class PkkupSport {
     var name: String?
     // Maybe?
     var iconImageUrl: String?
-    
-    var isSportSelected :Bool?
+
+    // Meta information
+    var isSelected: Bool?
     
     init(dictionary: NSDictionary) {
         self.sportDictionary = dictionary
@@ -76,6 +77,13 @@ class PkkupSport {
     class func getCached(id: Int) -> PkkupSport? {
         var sport = _pkkupSportCache.objectForKey(id) as? PkkupSport
         return sport
+    }
+
+    class func selectSportWithName(name: String) {
+        // mark one sport as selected, rest as not
+        for sport in PkkupSport.sports! {
+            sport.isSelected = sport.name? == name
+        }
     }
 
     func getPlayers() -> [PkkupPlayer] {
