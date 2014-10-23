@@ -14,6 +14,7 @@ var _GAMES = [PkkupGame]()
 var _LOCATIONS = [PkkupLocation]()
 var _PLAYERS = [PkkupPlayer]()
 var _GROUPS = [PkkupGroup]()
+var _CURRENT_PLAYER : PkkupPlayer!
 
 // A class for handling all API calls and networking
 class PkkupClient: BDBOAuth1RequestOperationManager {

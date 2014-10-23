@@ -31,7 +31,7 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         var tblView =  UIView(frame: CGRectZero)
         resultsTableView.tableFooterView = tblView
         resultsTableView.tableFooterView?.hidden = true
-        resultsTableView.backgroundColor = UIColor.blackColor()
+        //resultsTableView.backgroundColor = UIColor.blackColor()
         self.tabBarController?.tabBar.tintColor = UIColor.orangeColor()
 
         self.selectedSport = "Basketball"

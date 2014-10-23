@@ -22,8 +22,7 @@ class ResultTableViewCell: UITableViewCell {
             timeLabel.text = newGame.getFormattedStartTime()
             var location = newGame.getLocation()
             locationLabel.text = "\(location.name!)\n\(location.address!)"
-            numPlayersLabel.text = "/10 Players"
-            numRsvpLabel.text = "6"
+            numRsvpLabel.text = String(newGame.getPlayersConfirmed().count) + " Going"
             distanceLabel.text = "1.2 miles"
             
             var bgColorView = UIView()
