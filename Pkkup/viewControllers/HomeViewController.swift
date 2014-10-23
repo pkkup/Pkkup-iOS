@@ -34,6 +34,8 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         resultsTableView.backgroundColor = UIColor.blackColor()
         self.tabBarController?.tabBar.tintColor = UIColor.orangeColor()
 
+        self.selectedSport = "Basketball"
+        PkkupSport.selectSportWithName("Basketball")
         reloadGames()
     }
 
