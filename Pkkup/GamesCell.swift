@@ -10,9 +10,21 @@ import UIKit
 
 class GamesCell: UITableViewCell {
 
-    @IBOutlet weak var sportNameLabel: UILabel!
-    @IBOutlet weak var sportLocationLabel: UILabel!
+    @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var gameLocationLabel: UILabel!
+    @IBOutlet weak var gameTimeLabel: UILabel!
     
+    var game: PkkupGame! {
+        willSet(newGame) {
+            gameNameLabel.text = newGame.sport?.name
+            var location = newGame.getLocation()
+            gameLocationLabel.text = "\(location.name!), \(location.city!), \(location.state!)"
+            gameTimeLabel.text = newGame.getFormattedStartTime()
+        }
+        didSet(oldGame) {
+            
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

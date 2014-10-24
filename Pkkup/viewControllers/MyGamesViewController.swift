@@ -8,11 +8,15 @@
 
 import UIKit
 
-class MyGamesViewController: UIViewController {
+class MyGamesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var gamesTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        gamesTableView.dataSource = self
+        gamesTableView.delegate = self
+        gamesTableView.rowHeight = UITableViewAutomaticDimension
+        gamesTableView.estimatedRowHeight = 80.0
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +25,16 @@ class MyGamesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return _GAMES.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = gamesTableView.dequeueReusableCellWithIdentifier("GamesCell") as GamesCell
+        var game = _GAMES[indexPath.row]
+        cell.game = game
+        return cell
+    }
 
     /*
     // MARK: - Navigation
