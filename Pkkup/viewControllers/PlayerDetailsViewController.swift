@@ -36,7 +36,8 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
         
         gamesTableView.dataSource = self
         gamesTableView.delegate = self
-
+        gamesTableView.rowHeight = UITableViewAutomaticDimension
+        gamesTableView.estimatedRowHeight = 80.0
         //customize player image
         self.playerImageView.layer.cornerRadius = 5
         self.playerImageView.clipsToBounds = true
@@ -57,24 +58,25 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5;
+        return _GAMES.count
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Upcoming Games") {
-                return "Upcoming Games"
-        } else if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Past Locations") {
-            return "Past Locations"
-        } else {
-            return "Recent Games"
-        }
-        
-    }
+//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Upcoming Games") {
+//                return "Upcoming Games"
+//        } else if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Past Locations") {
+//            return "Past Locations"
+//        } else {
+//            return "Recent Games"
+//        }
+//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = gamesTableView.dequeueReusableCellWithIdentifier("GamesCell") as GamesCell
-        cell.sportNameLabel.text = "Basket Ball"
-        cell.sportLocationLabel.text = "700 N First Street, Sunnyvale"
+        //cell.sportNameLabel.text = "Basket Ball"
+        //cell.sportLocationLabel.text = "700 N First Street, Sunnyvale"
+        var game = _GAMES[indexPath.row]
+        cell.game = game
         return cell
         
     }
