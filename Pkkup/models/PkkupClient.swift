@@ -32,7 +32,7 @@ class PkkupClient: BDBOAuth1RequestOperationManager {
     class var sharedInstance : PkkupClient {
         struct Static {
             static let instance = PkkupClient(
-                baseURL: NSURL(string: PKKUP_API_BASE_URL),
+                baseURL: NSURL(string: PKKUP_API_BASE_URL)!,
                 consumerKey: nil,
                 consumerSecret: nil
             )
@@ -96,7 +96,7 @@ class PkkupClient: BDBOAuth1RequestOperationManager {
         var apiUrl = "\(PKKUP_API_BASE_URL)\(resource)"
         // temporarily include App key to increase rate limit
         apiUrl = "\(apiUrl)?api_key=secret"
-        let request = NSMutableURLRequest(URL: NSURL.URLWithString(apiUrl))
+        let request = NSMutableURLRequest(URL: NSURL(string: apiUrl)!)
         NSLog("Hitting API: \(apiUrl)")
         
         var cachedResult: AnyObject? = cache[apiUrl]
