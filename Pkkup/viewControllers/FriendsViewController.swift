@@ -10,7 +10,7 @@ import UIKit
 
 enum FriendsSegmentedControlEnum: Int {
     case Following = 0
-    case Followers
+    case Followers = 1
 }
 
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -22,7 +22,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     var playersFollowing: [PkkupPlayer]!
     var playersFollowers: [PkkupPlayer]!
     var currentPlayer: PkkupPlayer!
-    var selectedSegment: Int = 0
+    var selectedSegment: FriendsSegmentedControlEnum = FriendsSegmentedControlEnum.Following
     
     
     override func viewDidLoad() {
@@ -46,16 +46,16 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func onFriendsSegControlTap(sender: UISegmentedControl) {
-        self.selectedSegment = self.friendsSegControl.selectedSegmentIndex
+        self.selectedSegment = FriendsSegmentedControlEnum(rawValue: self.friendsSegControl.selectedSegmentIndex)!
         NSLog("friendsSegControl index :\(selectedSegment)")
         friendsTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.selectedSegment {
-            case FriendsSegmentedControlEnum.Following.toRaw() :
+            case .Following:
                 return playersFollowing!.count
-            case FriendsSegmentedControlEnum.Followers.toRaw() :
+            case .Followers:
                 return playersFollowers!.count
             default:
                 return 0
@@ -66,9 +66,9 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         var cell = friendsTableView.dequeueReusableCellWithIdentifier("playersListTableViewCell") as PlayersListTableViewCell
         var player: PkkupPlayer!
         switch self.selectedSegment {
-        case FriendsSegmentedControlEnum.Following.toRaw() :
+        case .Following:
             player = playersFollowing![indexPath.row]
-        case FriendsSegmentedControlEnum.Followers.toRaw()  :
+        case .Followers:
             player = playersFollowers![indexPath.row]
         default:
             player = nil
@@ -82,9 +82,9 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var player: PkkupPlayer!
         switch self.selectedSegment {
-        case FriendsSegmentedControlEnum.Following.toRaw() :
+        case .Following:
             player = playersFollowing![indexPath.row]
-        case FriendsSegmentedControlEnum.Followers.toRaw()  :
+        case .Followers:
             player = playersFollowers![indexPath.row]
         default:
             player = nil
