@@ -23,7 +23,14 @@ class ResultTableViewCell: UITableViewCell {
             var location = newGame.getLocation()
             locationLabel.text = "\(location.name!)\n\(location.address!)"
             numRsvpLabel.text = String(newGame.getPlayersConfirmed().count) + " Going"
-            distanceLabel.text = "1.2 miles"
+
+            var distanceMiles = location.getCurrentDistanceInMiles()
+            if let distanceMiles = distanceMiles {
+                var formattedDistance = String(format: "%.2f", distanceMiles)
+                distanceLabel.text = "\(formattedDistance) miles"
+            } else {
+                distanceLabel.text = "? miles"
+            }
             
             var bgColorView = UIView()
             bgColorView.backgroundColor = UIColor.orangeColor()

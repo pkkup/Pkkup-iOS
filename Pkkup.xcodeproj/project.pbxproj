@@ -56,6 +56,7 @@
 		56C4506719DA820200551220 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C4506619DA820200551220 /* Images.xcassets */; };
 		56C4506A19DA820200551220 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C4506819DA820200551220 /* LaunchScreen.xib */; };
 		56C4507619DA820200551220 /* PkkupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C4507519DA820200551220 /* PkkupTests.swift */; };
+		56E9198719FD848000649E4A /* HTKLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9198619FD848000649E4A /* HTKLocationUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		56C4506F19DA820200551220 /* PkkupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PkkupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C4507419DA820200551220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56C4507519DA820200551220 /* PkkupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PkkupTests.swift; sourceTree = "<group>"; };
+		56E9198619FD848000649E4A /* HTKLocationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTKLocationUtils.swift; sourceTree = "<group>"; };
 		5B1292BD8BA896989F40FAA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87304160B2219FE1B805B571 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D292250A2C498FC1D43061E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		5648AB1719E6632700FF91BB /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				56E9198619FD848000649E4A /* HTKLocationUtils.swift */,
 				5648AB1819E6632700FF91BB /* HTKImageUtils.swift */,
 				5648AB1919E6632700FF91BB /* HTKNotificationUtils.swift */,
 				5648AB1A19E6632700FF91BB /* HTKUtils.swift */,
@@ -557,6 +560,7 @@
 				00E7C9BE19E783360045C303 /* SportsCollectionViewCell.swift in Sources */,
 				56C390C919E3981500CC2E61 /* SettingsViewController.swift in Sources */,
 				0029879119F7938B00199007 /* TabBarController.swift in Sources */,
+				56E9198719FD848000649E4A /* HTKLocationUtils.swift in Sources */,
 				5648AAF719E640E400FF91BB /* PkkupClient.swift in Sources */,
 				5648AB2C19E6632700FF91BB /* HTKNotificationUtils.swift in Sources */,
 				5648AB2919E6632700FF91BB /* YelpCategory.swift in Sources */,

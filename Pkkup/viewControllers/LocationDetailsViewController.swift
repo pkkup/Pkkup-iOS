@@ -38,6 +38,7 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
             
         }
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,18 +49,15 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
         
         mapView.showsUserLocation = true
         // Do any additional setup after loading the view, typically from a nib.
-        NSNotificationCenter.defaultCenter().addObserverForName("didUpdateLocationNotification", object: nil, queue: NSOperationQueue.mainQueue()) { (notification: NSNotification!) -> Void in
-            var userInfo = notification.userInfo!
-            var location = userInfo["location"] as CLLocation
-            println(location.coordinate.latitude)
-            println(location.coordinate.longitude)
-            var region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
-            //var region = MKCoordinateRegionMakeWithDistance(cordinate, 1000, 1000)
-            self.mapView.setRegion(region, animated: true)
-            
-        }
-
-
+//        NSNotificationCenter.defaultCenter().addObserverForName(htkDidUpdateLocationNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification: NSNotification!) -> Void in
+//            var userInfo = notification.userInfo!
+//            var location = userInfo["location"] as CLLocation
+//
+//            //            MKCoordinateReg
+////            var region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
+////            //var region = MKCoordinateRegionMakeWithDistance(cordinate, 1000, 1000)
+////            self.mapView.setRegion(region, animated: true)
+//        }
     }
 
     override func didReceiveMemoryWarning() {

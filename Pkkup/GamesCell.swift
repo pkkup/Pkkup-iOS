@@ -13,7 +13,7 @@ class GamesCell: UITableViewCell {
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var gameLocationLabel: UILabel!
     @IBOutlet weak var gameTimeLabel: UILabel!
-    
+
     var game: PkkupGame! {
         willSet(newGame) {
             gameNameLabel.text = newGame.sport?.name
