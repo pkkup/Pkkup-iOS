@@ -12,7 +12,6 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-    var locationManager = CLLocationManager()
     var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -30,28 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             var vc = storyboard.instantiateViewControllerWithIdentifier("PkkupNavigationController") as UIViewController
             window?.rootViewController = vc
         }
-        locationManager.requestAlwaysAuthorization()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        //locationManager.stopUpdatingLocation()
-        locationManager.startMonitoringSignificantLocationChanges()
-        
+
+        HTKLocationUtils.sharedInstance.startMonitoringLocation()
         return true
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var location = locations[0] as CLLocation
-        NSNotificationCenter.defaultCenter().postNotificationName("didUpdateLocationNotification", object: nil, userInfo: ["location" : location])
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        locationManager.stopUpdatingLocation()
-        if ((error) != nil) {
-            println("Error : \(error)")
-        }
-    }
-
     func userDidLogout() {
         var vc = storyboard.instantiateInitialViewController() as UIViewController
         window?.rootViewController = vc

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 var _pkkupLocationCache = NSCache()
 
@@ -71,6 +72,26 @@ class PkkupLocation {
     func getGames() -> [PkkupGame]? {
         // get and store locally
         return self.games
+    }
+
+    func getCurrentDistanceInMeters() -> Double? {
+        var currentLocation = HTKLocationUtils.sharedInstance.mostRecentLocation
+        var distanceMeters: Double?
+        if let currentLocation = currentLocation {
+            var thisCLLocation = CLLocation(latitude: self.latitude!, longitude: self.longitude!)
+            distanceMeters = currentLocation.distanceFromLocation(thisCLLocation)
+        }
+        return distanceMeters
+    }
+
+    func getCurrentDistanceInMiles() -> Double? {
+        var distanceMeters = getCurrentDistanceInMeters()
+        var distanceMiles: Double?
+        if let distanceMeters = distanceMeters {
+            let metersPerMile = 1609.344
+            distanceMiles = distanceMeters / metersPerMile
+        }
+        return distanceMiles
     }
 
     func getMap() {
