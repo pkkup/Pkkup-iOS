@@ -9,6 +9,7 @@
 import UIKit
 
 class CreateGameViewController: UITableViewController {
+    @IBOutlet weak var createGameButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,4 +33,6 @@ class CreateGameViewController: UITableViewController {
     }
     */
 
+    @IBAction func onCreateGame(sender: AnyObject) {
+    }
 }
