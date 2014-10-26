@@ -28,6 +28,7 @@ class PkkupPlayer {
     var biography: String?
     var city: String?
     var state: String?
+    var playerSports: [String]?
 
     // Relations
     var sports: [PkkupSport]?
@@ -35,8 +36,12 @@ class PkkupPlayer {
     var followingIds: [Int]?
     var followers: [PkkupPlayer]?
     var following: [PkkupPlayer]?
+    var gamesConfirmedIds: [Int]?
+    var gamesMaybeIds: [Int]?
+    var gamesRecentIds: [Int]?
     var gamesConfirmed: [PkkupGame]?
     var gamesMaybe: [PkkupGame]?
+    var gamesRecent: [PkkupGame]?
     var locations: [PkkupLocation]?
 
     // Maybe implement if we have time...
@@ -51,10 +56,16 @@ class PkkupPlayer {
         biography = dictionary["biography"] as? String
         city = dictionary["city"] as? String
         state = dictionary["state"] as? String
-
+        playerSports = dictionary["sports"] as? [String]
+        
         followerIds = dictionary["followers"] as? [Int]
         followingIds = dictionary["following"] as? [Int]
-
+        
+        var gamesDictionary = dictionary["games"] as NSDictionary
+        gamesConfirmedIds = gamesDictionary["confirmed"] as? [Int]
+        gamesMaybeIds = gamesDictionary["maybe"] as? [Int]
+        gamesRecentIds = gamesDictionary["recent"] as? [Int]
+        
         _pkkupPlayerCache.setObject(self, forKey: id!)
     }
 
@@ -126,5 +137,19 @@ class PkkupPlayer {
     func getFollowing() -> [PkkupPlayer] {
         var following = PkkupPlayer.playersWithIds(self.followingIds!)
         return following
+    }
+    
+    func getGamesConfirmed() -> [PkkupGame] {
+        var confimedGames = PkkupGame.gamesWithIds(self.gamesConfirmedIds!)
+        return confimedGames
+    }
+    
+    func getGamesMaybe() -> [PkkupGame] {
+        var maybeGames = PkkupGame.gamesWithIds(self.gamesMaybeIds!)
+        return maybeGames
+    }
+    func getGamesRecent() -> [PkkupGame] {
+        var recentGames = PkkupGame.gamesWithIds(self.gamesRecentIds!)
+        return recentGames
     }
 }

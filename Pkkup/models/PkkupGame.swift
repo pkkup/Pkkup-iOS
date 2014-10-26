@@ -61,6 +61,13 @@ class PkkupGame {
         var game = _pkkupGameCache.objectForKey(id) as? PkkupGame
         return game
     }
+    class func gamesWithIds(gameIds: [Int]) -> [PkkupGame] {
+        var games = gameIds.map({
+            (gameId: Int) -> PkkupGame in
+            PkkupGame.get(gameId)
+        })
+        return games
+    }
 
     func getLocation() -> PkkupLocation {
         if location != nil {
@@ -85,4 +92,6 @@ class PkkupGame {
         }
         return players
     }
+    
+    
 }

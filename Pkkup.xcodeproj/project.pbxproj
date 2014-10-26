@@ -12,6 +12,8 @@
 		003AE06C19F472000038D478 /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE06B19F472000038D478 /* MyGamesViewController.swift */; };
 		003AE06E19F47A020038D478 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE06D19F47A020038D478 /* CreateGameViewController.swift */; };
 		003AE07019F49B690038D478 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE06F19F49B690038D478 /* FriendsViewController.swift */; };
+		006C7C0F19FC78830020C42B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006C7C0E19FC78830020C42B /* MapKit.framework */; };
+		006C7C1119FC788C0020C42B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006C7C1019FC788C0020C42B /* CoreLocation.framework */; };
 		00E7C9BE19E783360045C303 /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */; };
 		15B8B7DBA7446582DA31C7D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1292BD8BA896989F40FAA9 /* libPods.a */; };
 		304CF9A919EC6C9F00E55A8E /* GamesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CF9A819EC6C9F00E55A8E /* GamesCell.swift */; };
@@ -72,6 +74,8 @@
 		003AE06B19F472000038D478 /* MyGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGamesViewController.swift; path = viewControllers/MyGamesViewController.swift; sourceTree = "<group>"; };
 		003AE06D19F47A020038D478 /* CreateGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateGameViewController.swift; path = viewControllers/CreateGameViewController.swift; sourceTree = "<group>"; };
 		003AE06F19F49B690038D478 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsViewController.swift; path = viewControllers/FriendsViewController.swift; sourceTree = "<group>"; };
+		006C7C0E19FC78830020C42B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		006C7C1019FC788C0020C42B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportsCollectionViewCell.swift; path = views/SportsCollectionViewCell.swift; sourceTree = "<group>"; };
 		304CF9A819EC6C9F00E55A8E /* GamesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCell.swift; sourceTree = "<group>"; };
 		304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006C7C1119FC788C0020C42B /* CoreLocation.framework in Frameworks */,
+				006C7C0F19FC78830020C42B /* MapKit.framework in Frameworks */,
 				15B8B7DBA7446582DA31C7D8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +151,8 @@
 		25B4A6E187AA5D0BB675AC59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				006C7C1019FC788C0020C42B /* CoreLocation.framework */,
+				006C7C0E19FC78830020C42B /* MapKit.framework */,
 				5B1292BD8BA896989F40FAA9 /* libPods.a */,
 			);
 			name = Frameworks;
