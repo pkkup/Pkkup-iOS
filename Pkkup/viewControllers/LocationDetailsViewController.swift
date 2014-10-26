@@ -6,17 +6,36 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class LocationDetailsViewController: PkkupViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var mapView: MKMapView!
 
     // TODO: wire outlets from views here
     @IBOutlet weak var gameHistoryTableView: UITableView!
-
+    var coordinate = CLLocationCoordinate2DMake(37.33233141, -122.0312186)
+    //var coordinate = CLLocationCoordinate2D
     var location: PkkupLocation! {
         willSet(newLocation) {
+            //coordinate = CLLocationCoordinate2DMake(37.33233141, -122.0312186)
+            coordinate = CLLocationCoordinate2DMake(newLocation.latitude!, newLocation.longitude!)
+            println("willSet called, \(coordinate.latitude), \(coordinate.longitude)")
+            //CLLocationManager requestWhenInUseAuthorization
+            var region = MKCoordinateRegionMakeWithDistance(coordinate, 1000,1000)
+            var point = MKPointAnnotation()
+            point.coordinate = coordinate
+            point.title = newLocation.name
+            point.subtitle = newLocation.address
+            self.mapView.setRegion(region, animated: true)
+            self.mapView.addAnnotation(point)
         }
 
         didSet(oldLocation) {
+            println("didSet called")
+
+            
         }
     }
     override func viewDidLoad() {
@@ -24,6 +43,23 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
 
         gameHistoryTableView.dataSource = self
         gameHistoryTableView.delegate = self
+        self.mapView.showsUserLocation = true
+        self.mapView.showsPointsOfInterest = true
+        
+        mapView.showsUserLocation = true
+        // Do any additional setup after loading the view, typically from a nib.
+        NSNotificationCenter.defaultCenter().addObserverForName("didUpdateLocationNotification", object: nil, queue: NSOperationQueue.mainQueue()) { (notification: NSNotification!) -> Void in
+            var userInfo = notification.userInfo!
+            var location = userInfo["location"] as CLLocation
+            println(location.coordinate.latitude)
+            println(location.coordinate.longitude)
+            var region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
+            //var region = MKCoordinateRegionMakeWithDistance(cordinate, 1000, 1000)
+            self.mapView.setRegion(region, animated: true)
+            
+        }
+
+
     }
 
     override func didReceiveMemoryWarning() {

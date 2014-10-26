@@ -41,7 +41,7 @@
         <!--Game Details View Controller-->
         <scene sceneID="e3C-gv-j8O">
             <objects>
-                <viewController id="2dE-qj-hUQ" userLabel="Game Details View Controller" customClass="GameDetailsViewController" customModule="Pkkup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameDetailsViewController" id="2dE-qj-hUQ" userLabel="Game Details View Controller" customClass="GameDetailsViewController" customModule="Pkkup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P4h-RL-Efv"/>
                         <viewControllerLayoutGuide type="bottom" id="rUB-vj-Bd9"/>
@@ -54,28 +54,31 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dem-wM-DQP">
-                                        <rect key="frame" x="20" y="20" width="63" height="17"/>
+                                        <rect key="frame" x="20" y="10" width="63" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="placeLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbs-Ch-JyU">
-                                        <rect key="frame" x="20" y="47" width="71" height="17"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sii-CG-KJZ">
+                                        <rect key="frame" x="20" y="32" width="79" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="placeButton">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPlaceButton:" destination="2dE-qj-hUQ" eventType="touchUpInside" id="7Uu-Vn-cSf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sii-CG-KJZ" secondAttribute="trailing" constant="10" id="7rs-jt-Bnx"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dem-wM-DQP" secondAttribute="trailing" constant="8" id="8kS-Bi-pJ6"/>
                                     <constraint firstItem="dem-wM-DQP" firstAttribute="leading" secondItem="7xY-dM-JnS" secondAttribute="leading" constant="20" id="OPG-JA-ICE"/>
-                                    <constraint firstItem="dem-wM-DQP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7xY-dM-JnS" secondAttribute="top" constant="20" id="jeB-5i-M1H"/>
-                                    <constraint firstItem="dem-wM-DQP" firstAttribute="top" secondItem="7xY-dM-JnS" secondAttribute="top" constant="20" id="l7U-TJ-eXo"/>
+                                    <constraint firstItem="sii-CG-KJZ" firstAttribute="top" secondItem="dem-wM-DQP" secondAttribute="bottom" constant="5" id="YVb-lT-RgT"/>
+                                    <constraint firstItem="dem-wM-DQP" firstAttribute="top" secondItem="7xY-dM-JnS" secondAttribute="top" constant="10" id="jeB-5i-M1H"/>
+                                    <constraint firstItem="sii-CG-KJZ" firstAttribute="leading" secondItem="7xY-dM-JnS" secondAttribute="leading" constant="20" id="kzC-mt-B9X"/>
                                     <constraint firstAttribute="height" constant="100" id="lCr-ZL-QTg"/>
-                                    <constraint firstItem="nbs-Ch-JyU" firstAttribute="top" secondItem="dem-wM-DQP" secondAttribute="bottom" constant="10" id="n20-EZ-goQ"/>
-                                    <constraint firstItem="nbs-Ch-JyU" firstAttribute="leading" secondItem="7xY-dM-JnS" secondAttribute="leading" constant="20" id="nHe-PQ-OZ6"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nbs-Ch-JyU" secondAttribute="trailing" constant="10" id="uQH-yp-6Pd"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yy5-JK-gFy">
@@ -191,7 +194,7 @@
                     <navigationItem key="navigationItem" id="0PF-bc-Btj"/>
                     <connections>
                         <outlet property="joinSegControl" destination="SkD-1W-Nf8" id="AAk-Sw-ogJ"/>
-                        <outlet property="placeLabel" destination="nbs-Ch-JyU" id="bLr-Bv-cuK"/>
+                        <outlet property="placeButton" destination="sii-CG-KJZ" id="l0d-hY-gxr"/>
                         <outlet property="playersListTable" destination="ewu-Es-dyV" id="oap-an-Fd0"/>
                         <outlet property="timeLabel" destination="dem-wM-DQP" id="WYB-t3-Cxf"/>
                     </connections>
@@ -415,7 +418,7 @@
         <!--Location Details View Controller-->
         <scene sceneID="CJA-Zy-Lhe">
             <objects>
-                <viewController id="YAS-Gp-Qck" userLabel="Location Details View Controller" customClass="LocationDetailsViewController" customModule="Pkkup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationDetailsViewController" id="YAS-Gp-Qck" userLabel="Location Details View Controller" customClass="LocationDetailsViewController" customModule="Pkkup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J5k-tw-EEa"/>
                         <viewControllerLayoutGuide type="bottom" id="fgG-tV-ptu"/>
@@ -424,37 +427,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiE-F1-zhO" userLabel="WeatherDetailsView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="236"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cuesta Park, 233 Grant Road, Mountain View, CA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsh-aL-51Y">
-                                        <rect key="frame" x="18" y="26" width="408" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75^ F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xed-KD-Eu4">
-                                        <rect key="frame" x="485" y="31" width="52" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4J-IY-bch">
-                                        <rect key="frame" x="61" y="71" width="276" height="165"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="236" id="EeZ-lX-c7o"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCL-xT-lLG" userLabel="GameHistoryView">
                                 <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DQj-WG-I5o">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bs6-PP-bOx">
+                                        <rect key="frame" x="8" y="10" width="584" height="29"/>
+                                        <segments>
+                                            <segment title="Upcoming"/>
+                                            <segment title="Recent Games"/>
+                                            <segment title="Player History"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DQj-WG-I5o">
                                         <rect key="frame" x="0.0" y="38" width="600" height="262"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameHistoryCell" id="mJI-hg-PEu" customClass="GameHistoryCell" customModule="Pkkup" customModuleProvider="target">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameHistoryCell" rowHeight="58" id="mJI-hg-PEu" customClass="GameHistoryCell" customModule="Pkkup" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJI-hg-PEu" id="TgJ-wf-Obc">
@@ -474,14 +462,6 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bs6-PP-bOx">
-                                        <rect key="frame" x="8" y="10" width="584" height="29"/>
-                                        <segments>
-                                            <segment title="Upcoming"/>
-                                            <segment title="Recent Games"/>
-                                            <segment title="Player History"/>
-                                        </segments>
-                                    </segmentedControl>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Bs6-PP-bOx" firstAttribute="leading" secondItem="uCL-xT-lLG" secondAttribute="leading" constant="8" id="0HA-ut-dlq"/>
@@ -491,6 +471,31 @@
                                     <constraint firstAttribute="trailing" secondItem="DQj-WG-I5o" secondAttribute="trailing" id="X4m-XU-1Yf"/>
                                     <constraint firstItem="DQj-WG-I5o" firstAttribute="leading" secondItem="uCL-xT-lLG" secondAttribute="leading" id="gfc-T3-OjG"/>
                                     <constraint firstItem="DQj-WG-I5o" firstAttribute="top" secondItem="Bs6-PP-bOx" secondAttribute="bottom" id="wrg-Md-6RY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiE-F1-zhO" userLabel="MapDetailsView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="236"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JZ0-N6-8WQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="208"/>
+                                    </mapView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O51-n0-j4v">
+                                        <rect key="frame" x="8" y="211" width="87" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.58412369239999995" green="0.95147157360000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JZ0-N6-8WQ" secondAttribute="trailing" id="2zy-dX-PwZ"/>
+                                    <constraint firstAttribute="height" constant="236" id="EeZ-lX-c7o"/>
+                                    <constraint firstItem="O51-n0-j4v" firstAttribute="leading" secondItem="FiE-F1-zhO" secondAttribute="leading" constant="8" id="LOp-W3-j6q"/>
+                                    <constraint firstItem="JZ0-N6-8WQ" firstAttribute="leading" secondItem="FiE-F1-zhO" secondAttribute="leading" id="Zb8-pG-R5P"/>
+                                    <constraint firstItem="JZ0-N6-8WQ" firstAttribute="top" secondItem="FiE-F1-zhO" secondAttribute="top" id="dSZ-oQ-TlH"/>
+                                    <constraint firstItem="O51-n0-j4v" firstAttribute="top" secondItem="JZ0-N6-8WQ" secondAttribute="bottom" constant="3" id="g9P-5Q-DwZ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O51-n0-j4v" secondAttribute="trailing" constant="10" id="qLc-6Q-8cU"/>
+                                    <constraint firstAttribute="bottom" secondItem="O51-n0-j4v" secondAttribute="bottom" constant="8" id="umN-3o-YCt"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -505,19 +510,10 @@
                             <constraint firstAttribute="trailing" secondItem="FiE-F1-zhO" secondAttribute="trailing" id="mQw-Rh-CRd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zde-Du-CFD">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="5qY-hA-Dmn">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0vW-zx-FxE">
-                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="&lt; Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="zde-Du-CFD"/>
                     <connections>
                         <outlet property="gameHistoryTableView" destination="DQj-WG-I5o" id="VRn-K1-ypH"/>
+                        <outlet property="mapView" destination="JZ0-N6-8WQ" id="7mF-9e-KNL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgv-Mb-RHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -745,7 +741,7 @@
                                         <segments>
                                             <segment title="Upcoming"/>
                                             <segment title="Recent Games"/>
-                                            <segment title="Past Locations"/>
+                                            <segment title="My Locations"/>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </segmentedControl>
@@ -763,7 +759,7 @@
                                 <rect key="frame" x="0.0" y="114" width="600" height="437"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GamesCell" rowHeight="72" id="lhu-dN-PHj" customClass="GamesCell" customModule="Pkkup" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GamesCell" rowHeight="72" id="lhu-dN-PHj" customClass="GamesCell" customModule="Pkkup" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lhu-dN-PHj" id="Q2r-hi-CZ9">
@@ -775,13 +771,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jN-8G-k9D">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="timeLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jN-8G-k9D">
                                                     <rect key="frame" x="537" y="10" width="55" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-aP-NHT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="locationLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-aP-NHT">
                                                     <rect key="frame" x="8" y="33" width="584" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -804,6 +800,7 @@
                                             <outlet property="gameLocationLabel" destination="Uhz-aP-NHT" id="CNi-q0-OcQ"/>
                                             <outlet property="gameNameLabel" destination="3se-yO-zp4" id="dnz-0E-NVE"/>
                                             <outlet property="gameTimeLabel" destination="2jN-8G-k9D" id="sc0-9v-lxH"/>
+                                            <segue destination="2dE-qj-hUQ" kind="push" identifier="gameDetailSegue1" id="n6s-b9-7SK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1197,4 +1194,7 @@
         <image name="games" width="25" height="25"/>
         <image name="settings" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="n6s-b9-7SK"/>
+    </inferredMetricsTieBreakers>
 </document>

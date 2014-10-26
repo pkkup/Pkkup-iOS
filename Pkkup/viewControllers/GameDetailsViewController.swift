@@ -11,7 +11,7 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
 
     
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var placeButton: UIButton!
     @IBOutlet weak var playersListTable: UITableView!
     @IBOutlet weak var joinSegControl: UISegmentedControl!
     
@@ -34,7 +34,8 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
         playersListTable.estimatedRowHeight = 120.0
         var location = game!.getLocation()
         timeLabel.text = game.getFormattedStartTime()
-        placeLabel.text = "\(location.name!),\n\(location.address!),\n\(location.city!) \(location.state!)"
+                self.placeButton.setTitle("\(location.name!),\n\(location.address!),\(location.city!) \(location.state!)", forState: UIControlState.Normal)
+        self.placeButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         playersConfirmed = game!.getPlayersConfirmed()
     }
 
@@ -43,6 +44,14 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onPlaceButton(sender: UIButton) {
+        var location = game.getLocation()
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var locationDetailsViewController = storyboard.instantiateViewControllerWithIdentifier("LocationDetailsViewController") as LocationDetailsViewController
+        locationDetailsViewController.view.layoutSubviews()
+        locationDetailsViewController.location = location
+        self.navigationController?.pushViewController(locationDetailsViewController, animated: true)
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playersConfirmed!.count

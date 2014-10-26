@@ -26,6 +26,8 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
             self.biographyLabel.text = newPlayer.biography!
             HTKImageUtils.sharedInstance.displayImageUrl(newPlayer.getGravatarImageUrl(), imageView: playerImageView)
             self.navigationItem.title = newPlayer.name!
+            self.playerLocationLabel.text = "\(newPlayer.city!), \(newPlayer.state!)"
+            self.playerSportsLabel.text = ", ".join(newPlayer.playerSports!)
         }
 
         didSet(oldPlayer) {
@@ -50,7 +52,7 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
     
 
     @IBAction func onFollow(sender: AnyObject) {
-        if(followUnfollowButton.touchInside) {
+        if(followUnfollowButton.titleLabel?.text == "Follow") {
             followUnfollowButton.setTitle("Unfollow", forState: UIControlState.Normal)
         } else {
             followUnfollowButton.setTitle("Follow", forState: UIControlState.Normal)
@@ -61,15 +63,15 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
         return _GAMES.count
     }
     
-//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Upcoming Games") {
-//                return "Upcoming Games"
-//        } else if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Past Locations") {
-//            return "Past Locations"
-//        } else {
-//            return "Recent Games"
-//        }
-//    }
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Upcoming Games") {
+                return "Upcoming Games"
+        } else if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Past Locations") {
+            return "Past Locations"
+        } else {
+            return "Recent Games"
+        }
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = gamesTableView.dequeueReusableCellWithIdentifier("GamesCell") as GamesCell
