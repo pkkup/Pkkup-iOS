@@ -38,6 +38,9 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         playersFollowers = self.currentPlayer.getFollowers()
         playersFollowing = self.currentPlayer.getFollowing()
         // Do any additional setup after loading the view.
+        var tblView =  UIView(frame: CGRectZero)
+        friendsTableView.tableFooterView = tblView
+        friendsTableView.tableFooterView?.hidden = true
     }
 
     override func didReceiveMemoryWarning() {

@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "glyphicons_027_search-1.png"
+      "filename" : "search.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "glyphicons_027_search.png"
+      "filename" : "search@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "glyphicons_027_search-2.png"
+      "filename" : "search@3x.png"
     }
   ],
   "info" : {

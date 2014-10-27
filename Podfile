@@ -9,5 +9,6 @@ pod 'FontAwesome-iOS'
 pod 'MBProgressHUD', '~> 0.5'
 pod 'TSMessages'
 pod 'TTTAttributedLabel'
+pod 'HexColors'
 
 # Other Pod dependencies
