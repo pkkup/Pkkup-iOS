@@ -11,5 +11,5 @@
 #import "NSString+FontAwesome.h"
 #import "TSMessage.h"
 #import "TTTAttributedLabel.h"
-
+#import "HexColor.h"
 // Other dependencies

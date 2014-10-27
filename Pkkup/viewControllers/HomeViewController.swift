@@ -17,7 +17,6 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     let SPORT_CHOICES_DEFAULT_HEIGHT = CGFloat(44)
     var gamesByCity = [String:[PkkupGame]]()
     var selectedSport:String?
-
     var sectionHeadings = [String]()
 
     override func viewDidLoad() {
@@ -31,9 +30,12 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         var tblView =  UIView(frame: CGRectZero)
         resultsTableView.tableFooterView = tblView
         resultsTableView.tableFooterView?.hidden = true
-        //resultsTableView.backgroundColor = UIColor.blackColor()
         self.tabBarController?.tabBar.tintColor = UIColor.orangeColor()
-
+        
+        //Code for changing the colors of NavBar and TabBar
+        //self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#5AD427", alpha: 1)
+        //self.tabBarController?.tabBar.barTintColor = UIColor(hexString: "#5AD427", alpha: 1)
+        
         self.selectedSport = "Basketball"
         PkkupSport.selectSportWithName("Basketball")
         reloadGames()
