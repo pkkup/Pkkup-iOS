@@ -638,7 +638,7 @@
                                                             <rect key="frame" x="39" y="4" width="72" height="30"/>
                                                             <state key="normal" title="Basketball">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <color key="titleShadowColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="titleShadowColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="didSelect:" destination="P8h-Ms-qM7" eventType="touchUpInside" id="GJE-57-aDd"/>
@@ -654,6 +654,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="centerX" secondItem="jsI-Tx-gWG" secondAttribute="centerX" id="4P6-o2-Lae"/>
                                                     <constraint firstItem="7d6-gZ-0EB" firstAttribute="top" secondItem="jsI-Tx-gWG" secondAttribute="bottom" constant="-2" id="JJw-QR-NEW"/>
@@ -754,10 +755,13 @@
                                         <rect key="frame" x="8" y="11" width="584" height="29"/>
                                         <segments>
                                             <segment title="Upcoming"/>
-                                            <segment title="Recent Games"/>
+                                            <segment title="Saved Games"/>
                                             <segment title="My Locations"/>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="onMyGamesSegControlTap:" destination="zUz-DL-LdJ" eventType="valueChanged" id="WWh-ud-m4b"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
@@ -785,14 +789,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="timeLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jN-8G-k9D">
-                                                    <rect key="frame" x="537" y="10" width="55" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jN-8G-k9D">
+                                                    <rect key="frame" x="504" y="10" width="55" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="locationLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-aP-NHT">
-                                                    <rect key="frame" x="8" y="33" width="584" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-aP-NHT">
+                                                    <rect key="frame" x="8" y="33" width="551" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -817,6 +821,51 @@
                                             <segue destination="2dE-qj-hUQ" kind="push" identifier="gameDetailSegue1" id="n6s-b9-7SK"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="77" id="BUX-WT-diN" customClass="LocationCell" customModule="Pkkup" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BUX-WT-diN" id="OxL-ge-P6G">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAD-9l-VTY">
+                                                    <rect key="frame" x="8" y="10" width="82" height="15"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAh-QF-h0C">
+                                                    <rect key="frame" x="8" y="33" width="94" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="13.2 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFf-RW-Ubp">
+                                                    <rect key="frame" x="535" y="10" width="57" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dFf-RW-Ubp" secondAttribute="trailing" constant="8" id="0OG-8d-5oW"/>
+                                                <constraint firstItem="eAh-QF-h0C" firstAttribute="leading" secondItem="OxL-ge-P6G" secondAttribute="leading" constant="8" id="0yT-Am-3LA"/>
+                                                <constraint firstItem="dFf-RW-Ubp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zAD-9l-VTY" secondAttribute="trailing" constant="8" id="4th-Q5-B7V"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eAh-QF-h0C" secondAttribute="trailing" constant="8" id="Bis-N8-MZ3"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eAh-QF-h0C" secondAttribute="bottom" constant="10" id="EdY-6l-mQH"/>
+                                                <constraint firstItem="eAh-QF-h0C" firstAttribute="top" secondItem="zAD-9l-VTY" secondAttribute="bottom" constant="8" id="G9B-id-sxy"/>
+                                                <constraint firstItem="dFf-RW-Ubp" firstAttribute="top" secondItem="OxL-ge-P6G" secondAttribute="top" constant="10" id="QER-bb-ml2"/>
+                                                <constraint firstItem="zAD-9l-VTY" firstAttribute="top" secondItem="OxL-ge-P6G" secondAttribute="top" constant="10" id="Yon-xS-TDU"/>
+                                                <constraint firstItem="dFf-RW-Ubp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zAD-9l-VTY" secondAttribute="trailing" constant="8" id="g6l-JW-RUr"/>
+                                                <constraint firstItem="eAh-QF-h0C" firstAttribute="top" secondItem="zAD-9l-VTY" secondAttribute="bottom" constant="8" id="hbx-4S-xcO"/>
+                                                <constraint firstItem="zAD-9l-VTY" firstAttribute="leading" secondItem="OxL-ge-P6G" secondAttribute="leading" constant="8" id="n9g-tH-ndq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="locationAddressLabel" destination="eAh-QF-h0C" id="Wkm-1T-hTR"/>
+                                            <outlet property="locationDistanceLabel" destination="dFf-RW-Ubp" id="6nA-un-ro2"/>
+                                            <outlet property="locationNameLabel" destination="zAD-9l-VTY" id="T2R-yC-kpr"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -834,6 +883,7 @@
                     <navigationItem key="navigationItem" title="Games" id="EWH-Ma-Imh"/>
                     <connections>
                         <outlet property="gamesTableView" destination="dzd-wP-NlP" id="Fy4-rO-qLt"/>
+                        <outlet property="myGamesSegControl" destination="Can-yz-cXl" id="hFV-Pf-nxk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pg7-h2-e3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1190,6 +1240,7 @@
             <objects>
                 <navigationController title="LocationNavController" automaticallyAdjustsScrollViewInsets="NO" id="xtu-S6-hh0" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TJr-di-bRl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wx6-A5-Rgz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

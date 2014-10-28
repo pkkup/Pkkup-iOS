@@ -8,6 +8,9 @@
 
 import UIKit
 
+//Global Variables
+var _THEME_COLOR = UIColor(hexString: "#0DB14B", alpha: 1)
+
 class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, SportsCellDelegate {
 
     @IBOutlet weak var sportsContainerView: UIView!

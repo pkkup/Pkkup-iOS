@@ -31,7 +31,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         friendsTableView.dataSource = self
         friendsTableView.rowHeight = UITableViewAutomaticDimension
         friendsTableView.estimatedRowHeight = 120.0
-        
+        self.navigationController?.navigationBar.barTintColor = _THEME_COLOR
         //Temp Current Player
         currentPlayer = _PLAYERS[7]
         
