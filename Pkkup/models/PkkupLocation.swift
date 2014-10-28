@@ -58,6 +58,14 @@ class PkkupLocation {
         var location = _pkkupLocationCache.objectForKey(id) as? PkkupLocation
         return location
     }
+    
+    class func locationsWithIds(locationIds: [Int]) -> [PkkupLocation] {
+        var locations = locationIds.map({
+            (locationId: Int) -> PkkupLocation in
+            PkkupLocation.get(locationId)
+        })
+        return locations
+    }
 
     func getCityAndStateString() -> String {
         var value = "\(self.city!), \(self.state!)"

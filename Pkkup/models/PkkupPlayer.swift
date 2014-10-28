@@ -42,6 +42,7 @@ class PkkupPlayer {
     var gamesConfirmed: [PkkupGame]?
     var gamesMaybe: [PkkupGame]?
     var gamesRecent: [PkkupGame]?
+    var locationIds: [Int]?
     var locations: [PkkupLocation]?
 
     // Maybe implement if we have time...
@@ -65,7 +66,7 @@ class PkkupPlayer {
         gamesConfirmedIds = gamesDictionary["confirmed"] as? [Int]
         gamesMaybeIds = gamesDictionary["maybe"] as? [Int]
         gamesRecentIds = gamesDictionary["recent"] as? [Int]
-        
+        locationIds = dictionary["locations"] as? [Int]
         _pkkupPlayerCache.setObject(self, forKey: id!)
     }
 
@@ -151,5 +152,10 @@ class PkkupPlayer {
     func getGamesRecent() -> [PkkupGame] {
         var recentGames = PkkupGame.gamesWithIds(self.gamesRecentIds!)
         return recentGames
+    }
+    
+    func getLocations() -> [PkkupLocation] {
+        var locations = PkkupLocation.locationsWithIds(self.locationIds!)
+        return locations
     }
 }

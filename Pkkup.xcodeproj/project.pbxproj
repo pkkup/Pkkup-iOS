@@ -15,6 +15,7 @@
 		006C7C0F19FC78830020C42B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006C7C0E19FC78830020C42B /* MapKit.framework */; };
 		006C7C1119FC788C0020C42B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006C7C1019FC788C0020C42B /* CoreLocation.framework */; };
 		00E7C9BE19E783360045C303 /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */; };
+		00EF1F0D19FFFFAF001EC69B /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF1F0C19FFFFAF001EC69B /* LocationCell.swift */; };
 		15B8B7DBA7446582DA31C7D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1292BD8BA896989F40FAA9 /* libPods.a */; };
 		304CF9A919EC6C9F00E55A8E /* GamesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CF9A819EC6C9F00E55A8E /* GamesCell.swift */; };
 		304CF9AB19EC77EB00E55A8E /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */; };
@@ -78,6 +79,7 @@
 		006C7C0E19FC78830020C42B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		006C7C1019FC788C0020C42B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		00E7C9BD19E783360045C303 /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportsCollectionViewCell.swift; path = views/SportsCollectionViewCell.swift; sourceTree = "<group>"; };
+		00EF1F0C19FFFFAF001EC69B /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = views/LocationCell.swift; sourceTree = "<group>"; };
 		304CF9A819EC6C9F00E55A8E /* GamesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCell.swift; sourceTree = "<group>"; };
 		304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
 		5648AAF419E6400000FF91BB /* PkkupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PkkupViewController.swift; path = viewControllers/PkkupViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				002A880F19E934C6006842B8 /* PlayersListTableViewCell.swift */,
 				304CF9A819EC6C9F00E55A8E /* GamesCell.swift */,
 				304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */,
+				00EF1F0C19FFFFAF001EC69B /* LocationCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				5648AB2B19E6632700FF91BB /* HTKImageUtils.swift in Sources */,
 				5648AB1B19E6632700FF91BB /* DataStructures.swift in Sources */,
 				5648AB2719E6632700FF91BB /* TwitterClient.swift in Sources */,
+				00EF1F0D19FFFFAF001EC69B /* LocationCell.swift in Sources */,
 				5648AB1D19E6632700FF91BB /* GitHubClient.swift in Sources */,
 				56C390C719E391C600CC2E61 /* PkkupSport.swift in Sources */,
 				56C27E6C19E0C87800AE1338 /* HomeViewController.swift in Sources */,

@@ -21,7 +21,7 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
         willSet(newLocation) {
             //coordinate = CLLocationCoordinate2DMake(37.33233141, -122.0312186)
             coordinate = CLLocationCoordinate2DMake(newLocation.latitude!, newLocation.longitude!)
-            println("willSet called, \(coordinate.latitude), \(coordinate.longitude)")
+            //println("willSet called, \(coordinate.latitude), \(coordinate.longitude)")
             //CLLocationManager requestWhenInUseAuthorization
             var region = MKCoordinateRegionMakeWithDistance(coordinate, 1000,1000)
             var point = MKPointAnnotation()
@@ -33,7 +33,7 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
         }
 
         didSet(oldLocation) {
-            println("didSet called")
+            //println("didSet called")
 
             
         }
