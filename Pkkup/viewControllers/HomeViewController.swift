@@ -13,7 +13,9 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     @IBOutlet weak var sportsContainerView: UIView!
     @IBOutlet var sportsCollectionView: UICollectionView!
     @IBOutlet weak private var resultsTableView: UITableView!
-
+    var themeColor = UIColor(hexString: "#0DB14B", alpha: 1)
+    var themeColorLight = UIColor(hexString: "#57D37A", alpha: 1)
+    
     let SPORT_CHOICES_DEFAULT_HEIGHT = CGFloat(44)
     var gamesByCity = [String:[PkkupGame]]()
     var selectedSport:String?
@@ -30,11 +32,14 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         var tblView =  UIView(frame: CGRectZero)
         resultsTableView.tableFooterView = tblView
         resultsTableView.tableFooterView?.hidden = true
-        self.tabBarController?.tabBar.tintColor = UIColor.orangeColor()
+        self.tabBarController?.tabBar.tintColor = UIColor.whiteColor()
         
         //Code for changing the colors of NavBar and TabBar
-        //self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#5AD427", alpha: 1)
-        //self.tabBarController?.tabBar.barTintColor = UIColor(hexString: "#5AD427", alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = self.themeColor
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        var logoImage = UIImage(named: "pkkup_logo")
+        self.navigationItem.titleView = UIImageView(image: logoImage)
+        self.tabBarController?.tabBar.barTintColor = self.themeColorLight
         
         self.selectedSport = "Basketball"
         PkkupSport.selectSportWithName("Basketball")

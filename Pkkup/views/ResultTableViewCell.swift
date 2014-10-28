@@ -14,14 +14,15 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var numPlayersLabel: UILabel!
     @IBOutlet weak var numRsvpLabel: UILabel!
-    
     @IBOutlet weak var distanceLabel: UILabel!
-    
+    var themeColor = UIColor(hexString: "#0DB14B", alpha: 1)
+
     var game : PkkupGame! {
         willSet(newGame) {
             timeLabel.text = newGame.getFormattedStartTime()
             var location = newGame.getLocation()
             locationLabel.text = "\(location.name!)\n\(location.address!)"
+            numRsvpLabel.textColor = self.themeColor
             numRsvpLabel.text = String(newGame.getPlayersConfirmed().count) + " Going"
 
             var distanceMiles = location.getCurrentDistanceInMiles()
@@ -33,7 +34,7 @@ class ResultTableViewCell: UITableViewCell {
             }
             
             var bgColorView = UIView()
-            bgColorView.backgroundColor = UIColor.orangeColor()
+            bgColorView.backgroundColor = self.themeColor
             self.selectedBackgroundView = bgColorView
         }
         didSet(oldGame) {
