@@ -14,6 +14,7 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
     @IBOutlet weak var placeButton: UIButton!
     @IBOutlet weak var playersListTable: UITableView!
     @IBOutlet weak var joinSegControl: UISegmentedControl!
+    var themeColor = UIColor(hexString: "#0DB14B", alpha: 1)
     
     var playersConfirmed: [PkkupPlayer]!
 
@@ -37,6 +38,9 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
                 self.placeButton.setTitle("\(location.name!),\n\(location.address!),\(location.city!) \(location.state!)", forState: UIControlState.Normal)
         self.placeButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         playersConfirmed = game!.getPlayersConfirmed()
+        joinSegControl.tintColor = self.themeColor
+        self.navigationController?.navigationBar.barTintColor = self.themeColor
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
