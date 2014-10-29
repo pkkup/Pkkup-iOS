@@ -63,6 +63,7 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
         self.locationSegmentControl.tintColor = _THEME_COLOR
         mapView.showsUserLocation = true
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {

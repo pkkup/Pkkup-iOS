@@ -38,6 +38,14 @@ class PkkupLocation {
         zipcode = dictionary["zipcode"] as? String
         latitude = dictionary["latitude"] as? Double
         longitude = dictionary["longitude"] as? Double
+        //var gamesDict = dictionary["games"] as? NSDictionary
+        //var upcomingArray = gamesDict?["upcoming"] as? [NSDictionary]
+        //var len = upcomingArray.count
+        //println(upcomingArray!.count)
+        //if(upcomingArray!.count == 16) {
+        //    println(upcomingArray![0])
+        //    println(upcomingArray![2])
+        //}
         _pkkupLocationCache.setObject(self, forKey: id!)
     }
 

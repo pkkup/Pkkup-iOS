@@ -10,10 +10,19 @@ import UIKit
 
 class SettingsViewController: PkkupViewController {
 
+    @IBOutlet weak var userNameField: UITextField!
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
+    @IBOutlet weak var cityFiled: UITextField!
+    @IBOutlet weak var stateField: UITextField!
+    @IBOutlet weak var favSportField: UITextField!
+    @IBOutlet weak var biographyTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.barTintColor = _THEME_COLOR
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +30,13 @@ class SettingsViewController: PkkupViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        view.endEditing(true);
+    }
 
+    @IBAction func onSubmitButton(sender: AnyObject) {
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -44,6 +44,10 @@ class MyGamesViewController: UIViewController, UITableViewDelegate, UITableViewD
         //println(myLocations)
         //gamesRecent    = self.currentPlayer.getGamesRecent()
         
+        var tblView =  UIView(frame: CGRectZero)
+        gamesTableView.tableFooterView = tblView
+        gamesTableView.tableFooterView?.hidden = true
+        
     }
 
     override func didReceiveMemoryWarning() {
