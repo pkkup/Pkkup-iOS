@@ -90,22 +90,20 @@ class MyGamesViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.location = location
             return cell
         }
-        
-
-        
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-//        var game = self.gamesConfirmed[indexPath.row]
-//        println(game)
-//        println(game.location?.city)
-//        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        var gameDetailsViewController = storyboard.instantiateViewControllerWithIdentifier("GameDetailsViewController") as GameDetailsViewController
-//        gameDetailsViewController.view.layoutSubviews()
-//        gameDetailsViewController.game = game
-//        self.navigationController?.pushViewController(gameDetailsViewController, animated: true)
-//    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if ( self.selectedSegment != .Locations) {
+            return
+        }
+        var location = myLocations[indexPath.row]
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var locationDetailsViewController = storyboard.instantiateViewControllerWithIdentifier("LocationDetailsViewController") as LocationDetailsViewController
+        locationDetailsViewController.view.layoutSubviews()
+        locationDetailsViewController.location = location
+        self.navigationController?.pushViewController(locationDetailsViewController, animated: true)
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "gameDetailSegue1") {
@@ -122,11 +120,6 @@ class MyGamesViewController: UIViewController, UITableViewDelegate, UITableViewD
                     println("default case error")
             }
             
-        } else if (segue.identifier == "locationSegue") {
-            let locationDetailsViewController = segue.destinationViewController as LocationDetailsViewController
-            var indexPath = self.gamesTableView.indexPathForSelectedRow()?.row
-            var location = self.myLocations[indexPath!]
-            locationDetailsViewController.location = location
         }
     }
 

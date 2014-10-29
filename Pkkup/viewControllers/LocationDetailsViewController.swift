@@ -9,12 +9,20 @@ import UIKit
 import MapKit
 import CoreLocation
 
+enum LocationSegmentedControlEnum: Int {
+    case Today  = 0
+    case Upcoming = 1
+    case Recent = 2
+}
+
 class LocationDetailsViewController: PkkupViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var mapDetailsView: UIView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSegmentControl: UISegmentedControl!
     @IBOutlet weak var gameHistoryTableView: UITableView!
     
+    @IBOutlet weak var locationLabel: UILabel!
     var selectedSegmentControl: Int!
     
     var sports: [String] = ["Basketball", "Soccer", "Football", "Baseball", "Cricket"]
@@ -34,6 +42,7 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
             point.subtitle = newLocation.address
             self.mapView.setRegion(region, animated: true)
             self.mapView.addAnnotation(point)
+            self.locationLabel.text = "\(newLocation.name!), \(newLocation.city!), \(newLocation.state!)"
         }
 
         didSet(oldLocation) {
@@ -48,20 +57,12 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
 
         gameHistoryTableView.dataSource = self
         gameHistoryTableView.delegate = self
+        self.mapDetailsView.backgroundColor = _THEME_COLOR
         self.mapView.showsUserLocation = true
         self.mapView.showsPointsOfInterest = true
-        
+        self.locationSegmentControl.tintColor = _THEME_COLOR
         mapView.showsUserLocation = true
         // Do any additional setup after loading the view, typically from a nib.
-//        NSNotificationCenter.defaultCenter().addObserverForName(htkDidUpdateLocationNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification: NSNotification!) -> Void in
-//            var userInfo = notification.userInfo!
-//            var location = userInfo["location"] as CLLocation
-//
-//            //            MKCoordinateReg
-////            var region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
-////            //var region = MKCoordinateRegionMakeWithDistance(cordinate, 1000, 1000)
-////            self.mapView.setRegion(region, animated: true)
-//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,7 +71,7 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sports.count
+        return 3
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -40,7 +40,6 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
         playersConfirmed = game!.getPlayersConfirmed()
         joinSegControl.tintColor = self.themeColor
         self.navigationController?.navigationBar.barTintColor = self.themeColor
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
