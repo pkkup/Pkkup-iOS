@@ -11,16 +11,16 @@ import UIKit
 class GameHistoryCell: UITableViewCell {
 
     @IBOutlet weak var sportNameLabel: UILabel!
-    @IBOutlet weak var locationAddrLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var numPlayersLabel: UILabel!
     
-    var location: PkkupLocation! {
-        willSet(newLocation) {
-            self.sportNameLabel.text = "BasketBall"
-            self.locationAddrLabel.text = "123 new st"
-            self.timeLabel.text = "121"
+    var game: PkkupGame! {
+        willSet(newGame) {
+            self.sportNameLabel.text = newGame.sport?.name
+            self.timeLabel.text = newGame.getFormattedStartTime()
+            self.numPlayersLabel.text = "Num Players: \(String(newGame.getPlayersConfirmed().count))"
         }
-        didSet(oldLocation) {
+        didSet(oldGame) {
             
         }
     }
