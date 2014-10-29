@@ -16,6 +16,7 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     @IBOutlet weak var sportsContainerView: UIView!
     @IBOutlet var sportsCollectionView: UICollectionView!
     @IBOutlet weak private var resultsTableView: UITableView!
+    var selectedGame: PkkupGame!
     var themeColor = UIColor(hexString: "#0DB14B", alpha: 1)
     var themeColorLight = UIColor(hexString: "#57D37A", alpha: 1)
     
@@ -138,8 +139,11 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "gameDetailSegue") {
             let gameDetailsViewController = segue.destinationViewController as GameDetailsViewController
-            //let indexPath = self.resultsTableView.indexPathForSelectedRow()?.row
-            var game = _GAMES[0]
+            var indexPath = self.resultsTableView.indexPathForSelectedRow()
+            var section = indexPath!.section
+            var cityAndState = sectionHeadings[section]
+            var gamesInCity = gamesByCity[cityAndState]!
+            var game = gamesInCity[indexPath!.row]
             gameDetailsViewController.game = game
         }
     }
