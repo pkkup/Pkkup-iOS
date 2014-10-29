@@ -19,6 +19,7 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     var selectedGame: PkkupGame!
     var themeColor = UIColor(hexString: "#0DB14B", alpha: 1)
     var themeColorLight = UIColor(hexString: "#57D37A", alpha: 1)
+    var refreshControl:UIRefreshControl!
     
     let SPORT_CHOICES_DEFAULT_HEIGHT = CGFloat(44)
     var gamesByCity = [String:[PkkupGame]]()
@@ -45,9 +46,20 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
         self.navigationItem.titleView = UIImageView(image: logoImage)
         self.tabBarController?.tabBar.barTintColor = self.themeColorLight
         
+        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.labelText = "loading .."
+        hud.show(true)
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.resultsTableView.addSubview(refreshControl)
+        
         self.selectedSport = "Basketball"
         PkkupSport.selectSportWithName("Basketball")
         reloadGames()
+        
+        self.refreshControl.endRefreshing()
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,6 +121,18 @@ class HomeViewController: PkkupViewController, UISearchBarDelegate, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         resultsTableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func refresh(refreshControl : UIRefreshControl)
+    {
+        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.labelText = "loading .."
+        hud.show(true)
+        
+        // Code to refresh table view
+        reloadGames()
+        self.refreshControl.endRefreshing()
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
     
     //MARK: - Delegate
