@@ -107,6 +107,27 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
         return cell
     }
     
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        var game: PkkupGame!
+//        
+//        switch self.selectedSegment {
+//        case .Today:
+//            game = self.todayGames[indexPath.row]
+//        case .Upcoming:
+//            game = self.upcomingGames[indexPath.row]
+//        default:
+//            println("default case error")
+//            return
+//        }
+//        
+//        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        var gameDetailsViewController = storyboard.instantiateViewControllerWithIdentifier("GameDetailsViewController") as GameDetailsViewController
+//        gameDetailsViewController.view.layoutSubviews()
+//        gameDetailsViewController.game = game
+//        self.navigationController?.pushViewController(gameDetailsViewController, animated: true)
+//    }
+    
+    
     @IBAction func onLocationSegmentCtrlChange(sender: AnyObject) {
         println("Segment control changed: \(locationSegmentControl.selectedSegmentIndex)")
         self.selectedSegment = LocationSegmentedControlEnum(rawValue: self.locationSegmentControl.selectedSegmentIndex)!

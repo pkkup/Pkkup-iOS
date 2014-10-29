@@ -22,18 +22,20 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
     var game: PkkupGame! {
         willSet(newGame) {
             self.navigationItem.title = newGame.sport?.name
+            println("willSetCalled")
         }
         didSet(oldGame) {
             
         }
     }
     override func viewDidLoad() {
+        println("viewDidLoadCalled")
         super.viewDidLoad()
         playersListTable.dataSource = self
         playersListTable.delegate = self
         playersListTable.rowHeight = UITableViewAutomaticDimension
         playersListTable.estimatedRowHeight = 120.0
-        var location = game!.getLocation()
+        var location = self.game!.getLocation()
         timeLabel.text = game.getFormattedStartTime()
                 self.placeButton.setTitle("\(location.name!),\n\(location.address!),\(location.city!) \(location.state!)", forState: UIControlState.Normal)
         self.placeButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
