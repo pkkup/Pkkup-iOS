@@ -39,12 +39,26 @@ class GameDetailsViewController: PkkupViewController, UITableViewDataSource, UIT
         self.placeButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         playersConfirmed = game!.getPlayersConfirmed()
         joinSegControl.tintColor = self.themeColor
-        self.navigationController?.navigationBar.barTintColor = self.themeColor
+        self.navigationController?.navigationBar.barTintColor = _THEME_COLOR
+        
+        var tblView =  UIView(frame: CGRectZero)
+        playersListTable.tableFooterView = tblView
+        playersListTable.tableFooterView?.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func onMapImageTap(sender: UITapGestureRecognizer) {
+        var location = game.getLocation()
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var locationDetailsViewController = storyboard.instantiateViewControllerWithIdentifier("LocationDetailsViewController") as LocationDetailsViewController
+        locationDetailsViewController.view.layoutSubviews()
+        locationDetailsViewController.location = location
+        self.navigationController?.pushViewController(locationDetailsViewController, animated: true)
     }
     
     @IBAction func onPlaceButton(sender: UIButton) {

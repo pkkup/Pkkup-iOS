@@ -54,6 +54,10 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
         //customize player image
         self.playerImageView.layer.cornerRadius = 5
         self.playerImageView.clipsToBounds = true
+        
+//        var tblView =  UIView(frame: CGRectZero)
+//        gamesTableView.tableFooterView = tblView
+//        gamesTableView.tableFooterView?.hidden = true
 
     }
 
@@ -76,30 +80,6 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
             followUnfollowButton.setTitle("Follow", forState: UIControlState.Normal)
         }
     }
-    
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return _GAMES.count
-//    }
-//    
-//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Upcoming Games") {
-//                return "Upcoming Games"
-//        } else if(gamesSegment.titleForSegmentAtIndex(gamesSegment.selectedSegmentIndex) == "Past Locations") {
-//            return "Past Locations"
-//        } else {
-//            return "Recent Games"
-//        }
-//    }
-//    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        var cell = gamesTableView.dequeueReusableCellWithIdentifier("GamesCell") as GamesCell
-//        //cell.sportNameLabel.text = "Basket Ball"
-//        //cell.sportLocationLabel.text = "700 N First Street, Sunnyvale"
-//        var game = _GAMES[indexPath.row]
-//        cell.game = game
-//        return cell
-//        
-//    } 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.selectedSegment {
@@ -133,6 +113,19 @@ class PlayerDetailsViewController: PkkupViewController, UITableViewDataSource, U
             cell.location = location
             return cell
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if ( self.selectedSegment != .Locations) {
+            return
+        }
+        var location = self.myLocations[indexPath.row]
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var locationDetailsViewController = storyboard.instantiateViewControllerWithIdentifier("LocationDetailsViewController") as LocationDetailsViewController
+        locationDetailsViewController.view.layoutSubviews()
+        locationDetailsViewController.location = location
+        self.navigationController?.pushViewController(locationDetailsViewController, animated: true)
+        
     }
 
 }
