@@ -15,6 +15,7 @@ var _LOCATIONS = [PkkupLocation]()
 var _PLAYERS = [PkkupPlayer]()
 var _GROUPS = [PkkupGroup]()
 var _CURRENT_PLAYER : PkkupPlayer!
+var _SPORTS = [PkkupSport]()
 
 // A class for handling all API calls and networking
 class PkkupClient: BDBOAuth1RequestOperationManager {
@@ -123,6 +124,7 @@ class PkkupClient: BDBOAuth1RequestOperationManager {
             var sportDictionaries = responseDictionary["sports"] as [NSDictionary]
             var sports = PkkupSport.sportsWithArray(sportDictionaries)
             PkkupSport.sports = sports
+            _SPORTS = sports
             println("Got \(sports.count) sports")
         })
     }
