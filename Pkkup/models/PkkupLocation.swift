@@ -26,6 +26,9 @@ class PkkupLocation {
     // Relations
     var games: [PkkupGame]?
     var players: [PkkupPlayer]?
+    var upcomingGames: [PkkupGame]?
+    var todayGames: [PkkupGame]?
+    var pastGames: [PkkupGame]?
 
     init(dictionary: NSDictionary) {
         self.locationDictionary = dictionary
@@ -38,14 +41,17 @@ class PkkupLocation {
         zipcode = dictionary["zipcode"] as? String
         latitude = dictionary["latitude"] as? Double
         longitude = dictionary["longitude"] as? Double
-        //var gamesDict = dictionary["games"] as? NSDictionary
-        //var upcomingArray = gamesDict?["upcoming"] as? [NSDictionary]
-        //var len = upcomingArray.count
-        //println(upcomingArray!.count)
-        //if(upcomingArray!.count == 16) {
-        //    println(upcomingArray![0])
-        //    println(upcomingArray![2])
-        //}
+        
+        var gamesDict = dictionary["games"] as? NSDictionary
+        var upcomingArray = gamesDict?["upcoming"] as? [NSDictionary]
+        upcomingGames = PkkupGame.gamesWithArray(upcomingArray!)
+        
+        var todayArray = gamesDict?["today"] as? [NSDictionary]
+        todayGames = PkkupGame.gamesWithArray(todayArray!)
+        
+        var pastArray = gamesDict?["past"] as? [NSDictionary]
+        pastGames = PkkupGame.gamesWithArray(pastArray!)
+
         _pkkupLocationCache.setObject(self, forKey: id!)
     }
 

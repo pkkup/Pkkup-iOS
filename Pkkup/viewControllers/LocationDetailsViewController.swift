@@ -12,7 +12,7 @@ import CoreLocation
 enum LocationSegmentedControlEnum: Int {
     case Today  = 0
     case Upcoming = 1
-    case Recent = 2
+    case Past = 2
 }
 
 class LocationDetailsViewController: PkkupViewController, UITableViewDataSource, UITableViewDelegate {
@@ -23,7 +23,10 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
     @IBOutlet weak var gameHistoryTableView: UITableView!
     
     @IBOutlet weak var locationLabel: UILabel!
-    var selectedSegmentControl: Int!
+    var selectedSegment: LocationSegmentedControlEnum = LocationSegmentedControlEnum.Today
+    var upcomingGames: [PkkupGame]!
+    var todayGames: [PkkupGame]!
+    var pastGames: [PkkupGame]!
     
     var sports: [String] = ["Basketball", "Soccer", "Football", "Baseball", "Cricket"]
     
@@ -43,6 +46,9 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
             self.mapView.setRegion(region, animated: true)
             self.mapView.addAnnotation(point)
             self.locationLabel.text = "\(newLocation.name!), \(newLocation.city!), \(newLocation.state!)"
+            self.upcomingGames = newLocation.upcomingGames
+            self.todayGames = newLocation.todayGames
+            self.pastGames = newLocation.pastGames
         }
 
         didSet(oldLocation) {
@@ -57,6 +63,7 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
 
         gameHistoryTableView.dataSource = self
         gameHistoryTableView.delegate = self
+        gameHistoryTableView.rowHeight = UITableViewAutomaticDimension
         self.mapDetailsView.backgroundColor = _THEME_COLOR
         self.mapView.showsUserLocation = true
         self.mapView.showsPointsOfInterest = true
@@ -72,18 +79,38 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        switch self.selectedSegment {
+        case .Today:
+            return self.todayGames.count
+        case .Upcoming:
+            return self.upcomingGames.count
+        case .Past:
+            return self.pastGames.count
+        default:
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = gameHistoryTableView.dequeueReusableCellWithIdentifier("GameHistoryCell") as GameHistoryCell
-        cell.sportNameLabel.text = sports[indexPath.row]
+        
+        switch self.selectedSegment {
+        case .Today:
+            cell.game = self.todayGames[indexPath.row]
+        case .Upcoming:
+            cell.game = self.upcomingGames[indexPath.row]
+        case .Past:
+            cell.game = self.pastGames[indexPath.row]
+        default:
+            println("default case")
+        }
         return cell
     }
     
     @IBAction func onLocationSegmentCtrlChange(sender: AnyObject) {
         println("Segment control changed: \(locationSegmentControl.selectedSegmentIndex)")
-        self.selectedSegmentControl = locationSegmentControl.selectedSegmentIndex
+        self.selectedSegment = LocationSegmentedControlEnum(rawValue: self.locationSegmentControl.selectedSegmentIndex)!
+        gameHistoryTableView.reloadData()
     }
 
 

@@ -549,33 +549,33 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationAddressLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXv-qX-xgB">
-                                                            <rect key="frame" x="8" y="47" width="121" height="15"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5J-EA-3Du">
                                                             <rect key="frame" x="537" y="10" width="55" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="numPlayersLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuq-9b-4a8">
+                                                            <rect key="frame" x="8" y="46" width="96" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="AXv-qX-xgB" firstAttribute="top" secondItem="0Qd-4e-PpR" secondAttribute="bottom" constant="8" id="1ed-Te-WeG"/>
                                                         <constraint firstItem="y5J-EA-3Du" firstAttribute="top" secondItem="TgJ-wf-Obc" secondAttribute="top" constant="10" id="EGt-VX-UTI"/>
-                                                        <constraint firstAttribute="bottom" secondItem="AXv-qX-xgB" secondAttribute="bottom" constant="10" id="OBe-xc-2o1"/>
                                                         <constraint firstAttribute="trailing" secondItem="y5J-EA-3Du" secondAttribute="trailing" constant="8" id="UBj-So-EY8"/>
-                                                        <constraint firstItem="AXv-qX-xgB" firstAttribute="top" secondItem="0Qd-4e-PpR" secondAttribute="bottom" constant="8" id="b1q-iK-C3C"/>
+                                                        <constraint firstAttribute="bottom" secondItem="tuq-9b-4a8" secondAttribute="bottom" constant="10" id="c86-xG-RSP"/>
+                                                        <constraint firstItem="tuq-9b-4a8" firstAttribute="top" secondItem="0Qd-4e-PpR" secondAttribute="bottom" constant="8" id="jxj-BW-npe"/>
+                                                        <constraint firstItem="tuq-9b-4a8" firstAttribute="top" secondItem="0Qd-4e-PpR" secondAttribute="bottom" constant="8" id="lf7-tr-7xc"/>
                                                         <constraint firstItem="y5J-EA-3Du" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Qd-4e-PpR" secondAttribute="trailing" constant="8" id="n9t-jE-edw"/>
                                                         <constraint firstItem="0Qd-4e-PpR" firstAttribute="top" secondItem="TgJ-wf-Obc" secondAttribute="top" constant="10" id="nuu-Im-YfS"/>
                                                         <constraint firstItem="0Qd-4e-PpR" firstAttribute="leading" secondItem="TgJ-wf-Obc" secondAttribute="leading" constant="8" id="r7A-Pt-aZh"/>
-                                                        <constraint firstItem="AXv-qX-xgB" firstAttribute="leading" secondItem="TgJ-wf-Obc" secondAttribute="leading" constant="8" id="ucz-Nh-ZzF"/>
+                                                        <constraint firstItem="tuq-9b-4a8" firstAttribute="leading" secondItem="TgJ-wf-Obc" secondAttribute="leading" constant="8" id="w60-zL-qkd"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="locationAddrLabel" destination="AXv-qX-xgB" id="4Vo-38-EH0"/>
+                                                    <outlet property="numPlayersLabel" destination="tuq-9b-4a8" id="fFq-3e-SXF"/>
                                                     <outlet property="sportNameLabel" destination="0Qd-4e-PpR" id="koD-Jd-0T0"/>
                                                     <outlet property="timeLabel" destination="y5J-EA-3Du" id="JQc-ja-9aE"/>
                                                 </connections>
