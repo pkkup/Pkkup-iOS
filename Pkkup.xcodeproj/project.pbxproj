@@ -20,6 +20,7 @@
 		3044FE3C1A00C6640098337D /* LocationSportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044FE3B1A00C6640098337D /* LocationSportCell.swift */; };
 		304CF9A919EC6C9F00E55A8E /* GamesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CF9A819EC6C9F00E55A8E /* GamesCell.swift */; };
 		304CF9AB19EC77EB00E55A8E /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */; };
+		3098897A1A01594400604B09 /* CreateGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309889791A01594400604B09 /* CreateGameCell.swift */; };
 		5648AAF519E6400000FF91BB /* PkkupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAF419E6400000FF91BB /* PkkupViewController.swift */; };
 		5648AAF719E640E400FF91BB /* PkkupClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAF619E640E400FF91BB /* PkkupClient.swift */; };
 		5648AB1B19E6632700FF91BB /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AAFD19E6632700FF91BB /* DataStructures.swift */; };
@@ -84,6 +85,7 @@
 		3044FE3B1A00C6640098337D /* LocationSportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSportCell.swift; sourceTree = "<group>"; };
 		304CF9A819EC6C9F00E55A8E /* GamesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCell.swift; sourceTree = "<group>"; };
 		304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
+		309889791A01594400604B09 /* CreateGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameCell.swift; sourceTree = "<group>"; };
 		5648AAF419E6400000FF91BB /* PkkupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PkkupViewController.swift; path = viewControllers/PkkupViewController.swift; sourceTree = "<group>"; };
 		5648AAF619E640E400FF91BB /* PkkupClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PkkupClient.swift; path = models/PkkupClient.swift; sourceTree = "<group>"; };
 		5648AAFD19E6632700FF91BB /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				304CF9AA19EC77EB00E55A8E /* GameHistoryCell.swift */,
 				00EF1F0C19FFFFAF001EC69B /* LocationCell.swift */,
 				3044FE3B1A00C6640098337D /* LocationSportCell.swift */,
+				309889791A01594400604B09 /* CreateGameCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				56C27E6C19E0C87800AE1338 /* HomeViewController.swift in Sources */,
 				5648AB2419E6632700FF91BB /* RottenTomatoesClient.swift in Sources */,
 				5648AB2119E6632700FF91BB /* GitHubResource.swift in Sources */,
+				3098897A1A01594400604B09 /* CreateGameCell.swift in Sources */,
 				304CF9AB19EC77EB00E55A8E /* GameHistoryCell.swift in Sources */,
 				5648AB2219E6632700FF91BB /* GitHubUser.swift in Sources */,
 				5648AB2319E6632700FF91BB /* RottenTomatoesMovie.swift in Sources */,

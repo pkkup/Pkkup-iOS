@@ -18,8 +18,8 @@ class CreateGameViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var createGameButton: UIButton!
 
     @IBOutlet var createGameTableView: UITableView!
-    
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var gameDatePicker: UIDatePicker!
+
     
     var locations: [PkkupLocation] = _LOCATIONS
     var games: [PkkupGame] = _GAMES
@@ -29,6 +29,7 @@ class CreateGameViewController: UIViewController, UITableViewDataSource, UITable
     var sectionExpanded = [0: false, 1: false]
     var locationRowSelected = 0
     var sportRowSelected = 0
+    var gameDate: String!
     
     var delegate:CreateGameViewControllerDelegate?
     
@@ -38,10 +39,14 @@ class CreateGameViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barTintColor = _THEME_COLOR
+        
         createGameTableView.dataSource = self
         createGameTableView.delegate = self
         
         self.createGameTableView.reloadData()
+        
+        gameDatePicker.addTarget(self, action: Selector("datePickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
     }
 
@@ -51,14 +56,14 @@ class CreateGameViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
+        return 30.0
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        var headerView = UIView(frame: CGRect(x:0, y:0, width: 320, height: 40))
+        var headerView = UIView(frame: CGRect(x:0, y:0, width: 320, height: 30))
         headerView.backgroundColor = UIColor.whiteColor()
-        var headerLabel = UILabel(frame: CGRect(x:0, y:0, width:320, height: 40))
+        var headerLabel = UILabel(frame: CGRect(x:0, y:0, width:320, height: 30))
         if (section == 0) {
             headerLabel.text = "Location"
         }
@@ -114,6 +119,7 @@ class CreateGameViewController: UIViewController, UITableViewDataSource, UITable
             return cell
 
         } else {
+            //var cell = tableView.dequeueReusableCellWithIdentifier("CreateGameCell") as CreateGameCell
             return UITableViewCell()
         }
     }
@@ -124,11 +130,13 @@ class CreateGameViewController: UIViewController, UITableViewDataSource, UITable
         var section = indexPath.section
         if (section == 0 || section == 1) {
             if (sectionExpanded[section] == true) {
-                if (section == 1) {
+                if (section == 0) {
                     locationRowSelected = indexPath.row
+                    println("locationRowSelected = \(locationRowSelected)")
                     self.delegate?.locationSelected(locations[indexPath.row].name!, rowSelected: indexPath.row)
                 } else {
                     sportRowSelected = indexPath.row
+                    println("sportRowSelected = \(sportRowSelected)")
                     self.delegate?.sportSelected(sports[indexPath.row].name!, rowSelected: indexPath.row)
                 }
                 sectionExpanded[section] = false
@@ -141,7 +149,7 @@ class CreateGameViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func locationSelected(location: String, rowSelected: Int) {
@@ -155,6 +163,32 @@ class CreateGameViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func onCreate(sender: AnyObject) {
+        //var sportId: Int = (PkkupSport)self.sportRowSelected
+        var sportName: String = PkkupSport.get(self.sportRowSelected).name!
+        var newGame: PkkupGame = PkkupGame()
+        newGame.location?.id = self.locationRowSelected
+        newGame.sport?.id = self.sportRowSelected
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        
+        newGame.startTime = dateFormatter.dateFromString(self.gameDate)
+    }
+    
+    func datePickerChanged(datePicker:UIDatePicker) {
+        println("Date changed ####")
+        var dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        var strDate = dateFormatter.stringFromDate(datePicker.date)
+        self.gameDate = strDate
+        println("Game strDate = \(strDate)")
+    }
+
+    @IBAction func onViewTap(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 
 }

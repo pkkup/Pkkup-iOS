@@ -13,6 +13,7 @@ class LocationSportCell: UITableViewCell {
     var sports: [PkkupSport] = _SPORTS
 
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var selectionImageView: UIImageView!
 
     
     var section: Int = -1
@@ -55,6 +56,12 @@ class LocationSportCell: UITableViewCell {
             } else {
                 isRowSelected = false
             }
+        }
+        
+        if (sectionExpanded) {
+            selectionImageView.hidden = true
+        } else {
+            selectionImageView.hidden = false
         }
     }
 

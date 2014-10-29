@@ -26,7 +26,10 @@ class PkkupGame {
     var playersMaybeIds: [Int]?
     var playersMaybe: [PkkupPlayer]?
     var notes: String?
-
+    
+    init() {
+        
+    }
     // Probably not...
 //    var groups: [Group]?
     init(dictionary: NSDictionary) {
