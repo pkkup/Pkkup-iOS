@@ -11,6 +11,15 @@ import UIKit
 class GameHistoryCell: UITableViewCell {
 
     @IBOutlet weak var sportNameLabel: UILabel!
+    
+    var location: PkkupLocation! {
+        willSet(newLocation) {
+        }
+        didSet(oldLocation) {
+            
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

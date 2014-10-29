@@ -12,9 +12,13 @@ import CoreLocation
 class LocationDetailsViewController: PkkupViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-
-    // TODO: wire outlets from views here
+    @IBOutlet weak var locationSegmentControl: UISegmentedControl!
     @IBOutlet weak var gameHistoryTableView: UITableView!
+    
+    var selectedSegmentControl: Int!
+    
+    var sports: [String] = ["Basketball", "Soccer", "Football", "Baseball", "Cricket"]
+    
     var coordinate = CLLocationCoordinate2DMake(37.33233141, -122.0312186)
     //var coordinate = CLLocationCoordinate2D
     var location: PkkupLocation! {
@@ -66,24 +70,19 @@ class LocationDetailsViewController: PkkupViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return sports.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = gameHistoryTableView.dequeueReusableCellWithIdentifier("GameHistoryCell") as GameHistoryCell
-        cell.sportNameLabel.text = "Soccer"
+        cell.sportNameLabel.text = sports[indexPath.row]
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onLocationSegmentCtrlChange(sender: AnyObject) {
+        println("Segment control changed: \(locationSegmentControl.selectedSegmentIndex)")
+        self.selectedSegmentControl = locationSegmentControl.selectedSegmentIndex
     }
-    */
+
 
 }
