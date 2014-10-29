@@ -8,25 +8,40 @@
 
 import UIKit
 
-class CreateGameViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+protocol CreateGameViewControllerDelegate
+{
+    func locationSelected(location: String, rowSelected: Int)
+    func sportSelected(sport: String, rowSelected: Int)
+}
+
+class CreateGameViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CreateGameViewControllerDelegate {
     @IBOutlet weak var createGameButton: UIButton!
-    @IBOutlet weak var locationPicker: UIPickerView!
-    @IBOutlet weak var gamePicker: UIPickerView!
+
+    @IBOutlet var createGameTableView: UITableView!
     
+    @IBOutlet weak var locationLabel: UILabel!
     
     var locations: [PkkupLocation] = _LOCATIONS
     var games: [PkkupGame] = _GAMES
+    var sports: [PkkupSport] = _SPORTS
+    var isPickerChanged: Bool! = false
+    
+    var sectionExpanded = [0: false, 1: false]
+    var locationRowSelected = 0
+    var sportRowSelected = 0
+    
+    var delegate:CreateGameViewControllerDelegate?
+    
+    var selectedLocation: String!
+    var selectedSport: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationPicker.tag = 1
-        gamePicker.tag = 2
-
-        locationPicker.dataSource = self
-        locationPicker.delegate = self
-        gamePicker.dataSource = self
-        gamePicker.delegate = self
+        createGameTableView.dataSource = self
+        createGameTableView.delegate = self
+        
+        self.createGameTableView.reloadData()
         
     }
 
@@ -35,56 +50,111 @@ class CreateGameViewController: UITableViewController, UIPickerViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    @IBAction func onCreateGame(sender: AnyObject) {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-/*    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return locations[row].name
-    }*/
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(pickerView.tag == 1) {
-            return locations.count
-        } else {
-            return games.count
-        }
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if(pickerView.tag == 1) {
-            println("Location selected locName: \(locations[row].name!)")
-        } else {
-            println("Game selected lgameName: \((games[row].sport?.name!)!)")
-        }
-    }
-    
-    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
-        var label = UILabel(frame: CGRectMake(0, 0, locationPicker.frame.size.width, 50))
-        label.backgroundColor = UIColor.lightGrayColor()
-        label.textColor = UIColor.blackColor()
-        label.font = UIFont.preferredFontForTextStyle("HelveticaNeue-Bold")
-        label.font.fontWithSize(12)
-        if(pickerView.tag == 1) {
-            label.text = locations[row].name
-        } else {
-            label.text = games[row].sport?.name
-        }
-        return label;
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
+        var headerView = UIView(frame: CGRect(x:0, y:0, width: 320, height: 40))
+        headerView.backgroundColor = UIColor.whiteColor()
+        var headerLabel = UILabel(frame: CGRect(x:0, y:0, width:320, height: 40))
+        if (section == 0) {
+            headerLabel.text = "Location"
+        }
+        if (section == 1) {
+            headerLabel.text = "Sport"
+        }
+        
+        headerView.addSubview(headerLabel)
+        return headerView
+
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if(section == 0) {
+            if (sectionExpanded[section] == true) {
+                return locations.count
+            } else {
+                return 1
+            }
+            
+        }
+        
+        if(section == 1) {
+            if (sectionExpanded[section] == true) {
+                return sports.count
+            } else {
+                return 1
+            }
+        }
+         return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var section = indexPath.section
+        if(section == 0 || section == 1) {
+            var cell = tableView.dequeueReusableCellWithIdentifier("LocationSportCell") as LocationSportCell
+            cell.section = indexPath.section
+            if (!sectionExpanded[section]!) {
+                if (section == 0) {
+                    cell.row = locationRowSelected
+                } else if section == 1 {
+                    cell.row = sportRowSelected
+                }
+            } else {
+                cell.row = indexPath.row
+            }
+            cell.sportSelected = self.sportRowSelected
+            cell.locationSelected = self.locationRowSelected
+            cell.sectionExpanded = sectionExpanded[section]!
+            
+            cell.createGameDelegate = delegate
+            return cell
+
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        createGameTableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        var section = indexPath.section
+        if (section == 0 || section == 1) {
+            if (sectionExpanded[section] == true) {
+                if (section == 1) {
+                    locationRowSelected = indexPath.row
+                    self.delegate?.locationSelected(locations[indexPath.row].name!, rowSelected: indexPath.row)
+                } else {
+                    sportRowSelected = indexPath.row
+                    self.delegate?.sportSelected(sports[indexPath.row].name!, rowSelected: indexPath.row)
+                }
+                sectionExpanded[section] = false
+            } else {
+                sectionExpanded[section] = true
+            }
+        }
+        
+        tableView.reloadSections(NSIndexSet(index: indexPath.section), withRowAnimation: UITableViewRowAnimation.Fade)
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func locationSelected(location: String, rowSelected: Int) {
+        self.selectedLocation = location
+        self.locationRowSelected = rowSelected
+    }
+    
+    func sportSelected(sport: String, rowSelected: Int) {
+        self.selectedSport = sport
+        self.sportRowSelected = rowSelected
+    }
+    
+    @IBAction func onCreate(sender: AnyObject) {
+    }
+
 }
